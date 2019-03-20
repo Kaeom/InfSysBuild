@@ -3,16 +3,17 @@
 ## Architektúra
 A feladatok tipikusan olyan alkalmazások példái, ahol egy cég, vagy szervezet ügyfeleinek és eszközeinek közös nyilvántartását kell megoldani. Az elkészült szoftver JBoss EAP vagy JBoss Wildfly alkalmazás legyen JSF (Primefaces keretrendszer felhasználásával):
 
-Adatbázis: JDBC alapú relációs adatbázis, lehet MySQL, de lehet a JBoss beépített Hypersonic adatbázis kezelője
+- Adatbázis: JDBC alapú relációs adatbázis, lehet MySQL, de lehet a JBoss beépített Hypersonic adatbázis kezelője
+
 Az alkalmazottaknak nem szükséges azonosítani magukat az adatbázis elérésénél, és minden alkalmazott ugyan olyan felhasználói jogokkal rendelkezik.
 
 ## Eszközök
 A fejlesztés során a tantárgy keretei között megismert eszközöket lehet felhasználni:
 
-programozási nyelv: Java (JDK - http://java.sun.com/javase/downloads/index.jsp)
-fejlesztői eszköz: JBoss Developer Studio javasolt
-Primefaces JSF keretrendszer
-A keretrendszer tutorial-szerű használata ebben a könyvben található: https://www.packtpub.com/web-development/primefaces-cookbook a könyv “más forrásból” is megszerezhető.
+- programozási nyelv: Java (JDK - http://java.sun.com/javase/downloads/index.jsp)
+- fejlesztői eszköz: JBoss Developer Studio javasolt
+- Primefaces JSF keretrendszer
+- A keretrendszer tutorial-szerű használata ebben a könyvben található: https://www.packtpub.com/web-development/primefaces-cookbook a könyv “más forrásból” is megszerezhető.
 
 # Videó kölcsönző nyilvántartó rendszer
 
