@@ -1,0 +1,1 @@
+# Informatikai-rendszerek-p-t-se-beadand-
