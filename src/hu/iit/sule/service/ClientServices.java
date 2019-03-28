@@ -13,10 +13,12 @@ import java.util.ArrayList;
 public class ClientServices {
 
     private ArrayList<ClientsEntity> clients;
+    private ArrayList<ClientsEntity> clients2;
     DTOClients dtoClients = new DTOClients();
 
     public ArrayList<ClientsEntity> createClients(){
         clients = (ArrayList<ClientsEntity>) dtoClients.getClients();
+        clients2 = (ArrayList<ClientsEntity>) dtoClients.getClients();
         return clients;
     }
 
