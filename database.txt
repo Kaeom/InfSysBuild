@@ -1,0 +1,55 @@
+CREATE TABLE Movies
+(
+  Id INT NOT NULL AUTO_INCREMENT,
+  Cim VARCHAR(512) NOT NULL,
+  Datum DATE NOT NULL,
+  Sorszam VARCHAR(512) NOT NULL,
+  Status BOOLEAN NOT NULL,
+  Tipus VARCHAR(512) NOT NULL,
+  PRIMARY KEY (Id)
+);
+
+CREATE TABLE Clients
+(
+  Id INT NOT NULL AUTO_INCREMENT,
+  Nev VARCHAR(512) NOT NULL,
+  Telefon VARCHAR(512) NOT NULL,
+  Szig_szam VARCHAR(512) NOT NULL,
+  Lakcim VARCHAR(512) NOT NULL,
+  Aktiv BOOLEAN NOT NULL,
+  PRIMARY KEY (Id)
+);
+
+CREATE TABLE Renting
+(
+  Id INT NOT NULL AUTO_INCREMENT,,
+  ClientId INT NOT NULL,
+  MoviesId INT NOT NULL,
+  Kezdes DATE NOT NULL,
+  Lejarat DATE NOT NULL,
+  PRIMARY KEY (Id),
+  FOREIGN KEY (ClientId) REFERENCES Clients(Id),
+  FOREIGN KEY (MoviesId) REFERENCES Movies(Id)
+);
+
+
+
+
+
+            <!--<h:form>-->
+                <!--<h:panelGrid columns="2" cellpadding="5" style="width: 80%">-->
+                    <!--<h:outputLabel value="Név:"/>-->
+                    <!--<p:inputText value="#{clientView.client.nev}"/>-->
+
+                    <!--<h:outputLabel value="Telefon:"/>-->
+                    <!--<p:inputText value="#{clientView.client.telefon}"/>-->
+
+                    <!--<h:outputLabel value="SzigSzam:"/>-->
+                    <!--<p:inputText value="#{clientView.client.szigSzam}"/>-->
+
+                    <!--<h:outputLabel value="Lakcím:"/>-->
+                    <!--<p:inputText value="#{clientView.client.lakcim}"/>-->
+
+                    <!--<p:commandButton value="Submit" action="#{clientView.addClient}"/>-->
+                <!--</h:panelGrid>-->
+            <!--</h:form>-->

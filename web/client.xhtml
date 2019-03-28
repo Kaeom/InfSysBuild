@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>Clients</title>
+</h:head>
+<h:body>
+    <ui:composition template="template.xhtml">
+        <ui:define name="title">Clients</ui:define>
+        <ui:define name="content">
+
+            <h:form style="align-items: center">
+                <p:dataTable var="clientsentity" value="#{clientView.clients}" style="width: 80%">
+                    <p:column headerText="Id">
+                        <h:outputText value="#{clientsentity.id}" />
+                    </p:column>
+                    <p:column headerText="Név">
+                        <h:outputText value="#{clientsentity.nev}" />
+                    </p:column>
+                    <p:column headerText="Telefon">
+                        <h:outputText value="#{clientsentity.telefon}" />
+                    </p:column>
+                    <p:column headerText="SzigSzam">
+                        <h:outputText value="#{clientsentity.szigSzam}" />
+                    </p:column>
+                    <p:column headerText="Lakcím">
+                        <h:outputText value="#{clientsentity.lakcim}" />
+                    </p:column>
+                    <p:column headerText="Aktív">
+                        <h:outputText value="#{clientsentity.aktiv}" />
+                    </p:column>
+                    <p:column headerText="Törlés">
+                        <p:commandButton value="Delete" action="#{clientView.deleteClient(clientsentity)}"/>
+                        <p:commandButton value="Edit" action="#{clientView.editClient(clientsentity)}"/>
+                    </p:column>
+                </p:dataTable>
+            </h:form>
+        </ui:define>
+
+    </ui:composition>
+
+</h:body>
+</html>
