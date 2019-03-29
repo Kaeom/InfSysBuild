@@ -1,4 +1,4 @@
-CREATE TABLE Movies
+﻿CREATE TABLE Movies
 (
   Id INT NOT NULL AUTO_INCREMENT,
   Cim VARCHAR(512) NOT NULL,
@@ -53,3 +53,59 @@ CREATE TABLE Renting
                     <!--<p:commandButton value="Submit" action="#{clientView.addClient}"/>-->
                 <!--</h:panelGrid>-->
             <!--</h:form>-->
+
+
+
+
+
+
+FOR SQLite:
+
+CREATE TABLE Movies
+(
+  Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  Cim VARCHAR(512) NOT NULL,
+  Datum DATE NOT NULL,
+  Sorszam VARCHAR(512) NOT NULL,
+  Tipus VARCHAR(512) NOT NULL,
+  Status VARCHAR(512) NOT NULL
+);
+
+CREATE TABLE Clients
+(
+  Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  Nev VARCHAR(512) NOT NULL,
+  Telefon VARCHAR(512) NOT NULL,
+  Szig_szam VARCHAR(512) NOT NULL,
+  Lakcim VARCHAR(512) NOT NULL,
+  Aktiv BOOLEAN NOT NULL  
+);
+
+CREATE TABLE Renting
+(
+  Id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+  ClientId INT NOT NULL,
+  MoviesId INT NOT NULL,
+  Kezdes DATE NOT NULL,
+  Lejarat DATE NOT NULL,
+  FOREIGN KEY (ClientId) REFERENCES Clients(Id),
+  FOREIGN KEY (MoviesId) REFERENCES Movies(Id)
+);
+
+INSERT INTO Movies VALUES(0,"Cim1",date(),"001","DVD","Kölcsönözhető");
+INSERT INTO Movies VALUES(1,"Cim2",date(),"002","DVD","Kölcsönözhető");
+INSERT INTO Movies VALUES(2,"Cim3",date(),"003","DVD","Kölcsönözhető");
+INSERT INTO Movies VALUES(3,"Cim4",date(),"004","VHS","Kölcsönözhető");
+INSERT INTO Movies VALUES(4,"Cim5",date(),"005","VHS","Kölcsönözhető");
+
+INSERT INTO Movies VALUES(5,"Cim5",date(),"006","VHS","Kölcsönzött");
+INSERT INTO Movies VALUES(6,"Cim5",date(),"007","VHS","Kölcsönzött");
+
+INSERT INTO Clients VALUES(0,"Nev1","Tel1","SzigSzam1","Lakcim1",1);
+INSERT INTO Clients VALUES(1,"Nev2","Tel2","SzigSzam2","Lakcim1",1);
+INSERT INTO Clients VALUES(2,"Nev3","Tel3","SzigSzam3","Lakcim2",1);
+INSERT INTO Clients VALUES(3,"Nev4","Tel4","SzigSzam4","Lakcim3",1);
+INSERT INTO Clients VALUES(4,"Nev5","Tel5","SzigSzam5","Lakcim4",1);
+
+INSERT INTO Renting VALUES(0,0,5,date(),'2019-04-20');
+INSERT INTO Renting VALUES(1,0,6,date(),'2019-04-10');
