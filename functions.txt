@@ -1,0 +1,29 @@
+Clients:
+	add
+	list
+	listSearch:nev
+	listSearch:szigszam
+	listSearch:id
+	editClient
+	deleteClient only activ to false
+
+	client list content:
+	id, nev, tel, szigszam, lakcim, adatlap, delete, ?edit
+
+Movies:
+	add
+	list: cim, beszerzes datuma, sorszam, status(szabad, kikölcsonzott, selejtezett)
+Renting:
+	Client adatlap, movie renting, movies list from database if(movie is szabad) add button
+
+	selectManyMenu+search:
+	https://www.primefaces.org/showcase/ui/input/manyMenu.xhtml
+
+DeRenting:
+	list of rented movies:(renting:id,movie:id,movie:name,client:name,client:szigszam,renting:start,renting:end,button:(status to free))
+
+Late:
+	list of renting ended movies
+	list(client:name, client:szigszam, movie:cim, renting:start, renting:end, late)
+
+
