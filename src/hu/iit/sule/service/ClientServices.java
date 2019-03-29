@@ -1,7 +1,6 @@
 package hu.iit.sule.service;
 
 import hu.iit.sule.dto.DTOClients;
-import hu.iit.sule.model.Client;
 import hu.iit.sule.model.ClientsEntity;
 
 import javax.faces.bean.ApplicationScoped;

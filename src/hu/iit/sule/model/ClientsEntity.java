@@ -102,4 +102,16 @@ public class ClientsEntity {
     public int hashCode() {
         return Objects.hash(nev, telefon, szigSzam, lakcim, id, aktiv);
     }
+
+    @Override
+    public String toString() {
+        return "ClientsEntity{" +
+                "id=" + id +
+                ", nev='" + nev + '\'' +
+                ", telefon='" + telefon + '\'' +
+                ", szigSzam='" + szigSzam + '\'' +
+                ", lakcim='" + lakcim + '\'' +
+                ", aktiv=" + aktiv +
+                '}';
+    }
 }

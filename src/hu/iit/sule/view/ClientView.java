@@ -1,6 +1,5 @@
 package hu.iit.sule.view;
 
-import hu.iit.sule.model.Client;
 import hu.iit.sule.model.ClientsEntity;
 import hu.iit.sule.service.ClientServices;
 
@@ -16,6 +15,7 @@ import java.util.ArrayList;
 public class ClientView implements Serializable {
 
     private ArrayList<ClientsEntity> clients;
+    private ClientsEntity selectedClient;
 
     @ManagedProperty("#{clientService}")
     private ClientServices service;
@@ -24,19 +24,40 @@ public class ClientView implements Serializable {
     public void init(){
         System.out.println("init");
         clients = service.createClients();
-        System.out.println(clients.toString());
+       // System.out.println(clients.toString());
     }
 
     public ArrayList<ClientsEntity> getClients(){
+        clients = service.createClients();
         return clients;
     }
 
-    public void deleteClient(ClientsEntity client){
-        System.out.println(client);
-        service.deleteClient(client);
+    public ClientsEntity getSelectedClient() {
+        return selectedClient;
     }
 
-    public void editClient(Client client){
+    public void deleteClient(ClientsEntity client){
+        System.out.println(client.toString());
+        //service.deleteClient(client);
+    }
+
+    public String dataClient(ClientsEntity client){
+        selectedClient = client;
+        getSelectedClientData();
+        System.out.println(client.toString());
+        return "success?faces-redirect=true";
+    }
+
+    public void getSelectedClientData(){
+        System.out.println(selectedClient.toString());
+    }
+
+    public String backToClients(){
+        selectedClient = new ClientsEntity();
+        return "client?faces-redirect=true";
+    }
+
+    public void editClient(ClientsEntity client){
         System.out.println(client);
     }
 

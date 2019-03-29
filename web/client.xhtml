@@ -37,7 +37,9 @@
                     </p:column>
                     <p:column headerText="Törlés">
                         <p:commandButton value="Delete" action="#{clientView.deleteClient(clientsentity)}"/>
-                        <p:commandButton value="Edit" action="#{clientView.editClient(clientsentity)}"/>
+                    </p:column>
+                    <p:column headerText="Adatlap">
+                        <p:commandButton value="Adatlap" action="#{clientView.dataClient(clientsentity)}"/>
                     </p:column>
                 </p:dataTable>
             </h:form>
