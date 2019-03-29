@@ -11,12 +11,12 @@ public class ClientsEntity {
     private String telefon;
     private String szigSzam;
     private String lakcim;
-    private byte aktiv;
+    private boolean aktiv;
 
     public ClientsEntity() {
     }
 
-    public ClientsEntity(String nev, String telefon, String szigSzam, String lakcim, byte aktiv) {
+    public ClientsEntity(String nev, String telefon, String szigSzam, String lakcim, boolean aktiv) {
         this.nev = nev;
         this.telefon = telefon;
         this.szigSzam = szigSzam;
@@ -77,11 +77,11 @@ public class ClientsEntity {
 
     @Basic
     @Column(name = "Aktiv")
-    public byte getAktiv() {
+    public boolean getAktiv() {
         return aktiv;
     }
 
-    public void setAktiv(byte aktiv) {
+    public void setAktiv(boolean aktiv) {
         this.aktiv = aktiv;
     }
 

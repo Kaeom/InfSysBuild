@@ -1,34 +1,31 @@
 package hu.iit.sule.view;
 
+import hu.iit.sule.dto.DTOClients;
 import hu.iit.sule.model.ClientsEntity;
-import hu.iit.sule.service.ClientServices;
 
-import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.ViewScoped;
+import javax.faces.bean.SessionScoped;
 import java.io.Serializable;
 import java.util.ArrayList;
 
 @ManagedBean(name="clientView")
-@ViewScoped
+@SessionScoped
 public class ClientView implements Serializable {
 
     private ArrayList<ClientsEntity> clients;
     private ClientsEntity selectedClient;
 
-    @ManagedProperty("#{clientService}")
-    private ClientServices service;
+    DTOClients dtoClients = new DTOClients();
 
-    @PostConstruct
-    public void init(){
-        System.out.println("init");
-        clients = service.createClients();
-       // System.out.println(clients.toString());
-    }
+//    @PostConstruct
+//    public void init(){
+//        System.out.println("init");
+//        clients = service.createClients();
+//       // System.out.println(clients.toString());
+//    }
 
     public ArrayList<ClientsEntity> getClients(){
-        clients = service.createClients();
+        clients = (ArrayList<ClientsEntity>) dtoClients.listAllClient();
         return clients;
     }
 
@@ -59,9 +56,5 @@ public class ClientView implements Serializable {
 
     public void editClient(ClientsEntity client){
         System.out.println(client);
-    }
-
-    public void setService(ClientServices service){
-        this.service = service;
     }
 }

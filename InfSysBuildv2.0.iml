@@ -14,7 +14,7 @@
     <facet type="hibernate" name="Hibernate">
       <configuration>
         <datasource-map>
-          <unit-entry name="hibernate.cfg.xml" />
+          <unit-entry name="hibernate.cfg.xml" value="764f50ec-560e-4eda-ac9e-dcf2efcc09f2" />
         </datasource-map>
         <naming-strategy-map />
         <deploymentDescriptor name="hibernate.cfg.xml" url="file://$MODULE_DIR$/src/hibernate.cfg.xml" />
@@ -31,8 +31,8 @@
     <orderEntry type="library" scope="PROVIDED" name="JBoss 8.0.0.Final" level="application_server_libraries" />
     <orderEntry type="library" name="Mojarra-2.4.0" level="project" />
     <orderEntry type="library" name="PrimeFaces-6.1" level="project" />
-    <orderEntry type="library" name="Java EE 6-Java EE 6" level="project" />
     <orderEntry type="library" name="Hibernate 5.4.1-5.4.1" level="project" />
     <orderEntry type="library" name="mysql-connector-java-8.0.12" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-8.0.121" level="project" />
   </component>
 </module>

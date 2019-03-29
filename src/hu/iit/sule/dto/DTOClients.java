@@ -1,8 +1,9 @@
 package hu.iit.sule.dto;
 import hu.iit.sule.dataConnect.HibernateUtil;
 import hu.iit.sule.model.ClientsEntity;
+import hu.iit.sule.model.MoviesEntity;
+import hu.iit.sule.model.RentingEntity;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,13 +11,14 @@ import java.util.List;
 public class DTOClients {
 
     private List<ClientsEntity> clients;
+    private List<MoviesEntity> movies;
 
     public List<ClientsEntity> getClients(){
         clients = new ArrayList<>();
-        ClientsEntity client1 = new ClientsEntity("Név1","Tel1","Szig1","Lakcim1",(byte)1);
-        ClientsEntity client2 = new ClientsEntity("Név2","Tel2","Szig2","Lakcim2",(byte)1);
-        ClientsEntity client3 = new ClientsEntity("Név3","Tel3","Szig3","Lakcim3",(byte)1);
-        ClientsEntity client4 = new ClientsEntity("Név4","Tel4","Szig4","Lakcim4",(byte)1);
+        ClientsEntity client1 = new ClientsEntity("Név1","Tel1","Szig1","Lakcim1",true);
+        ClientsEntity client2 = new ClientsEntity("Név2","Tel2","Szig2","Lakcim2",true);
+        ClientsEntity client3 = new ClientsEntity("Név3","Tel3","Szig3","Lakcim3",true);
+        ClientsEntity client4 = new ClientsEntity("Név4","Tel4","Szig4","Lakcim4",true);
         clients.add(client1);
         clients.add(client2);
         clients.add(client3);
@@ -25,17 +27,15 @@ public class DTOClients {
     }
 
     public List<ClientsEntity> listAllClient(){
-        Transaction transaction = null;
-        List<ClientsEntity> clientsEntities = new ArrayList<>();
+        clients = new ArrayList<>();
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
-            clientsEntities = session.createQuery("from ClientsEntity ", ClientsEntity.class).list();
+            clients = session.createQuery("from ClientsEntity ", ClientsEntity.class).list();
 
         }catch (Exception e){
-            System.out.println(e.getMessage());
+            System.out.println(e.getMessage()+"DTOClients Message");
         }
-        return clientsEntities;
+        return clients;
     }
-
 
     public void deleteClient(ClientsEntity client){
         clients.remove(client);

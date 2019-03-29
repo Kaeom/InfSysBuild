@@ -5,14 +5,25 @@ import java.sql.Date;
 import java.util.Objects;
 
 @Entity
-@Table(name = "movies", schema = "infsysbuild", catalog = "")
+@Table(name = "movies", schema = "infsysbuild")
 public class MoviesEntity {
     private int id;
     private String cim;
     private Date datum;
     private String sorszam;
-    private byte status;
+    private String status;
     private String tipus;
+
+    public MoviesEntity() {
+    }
+
+    public MoviesEntity(String cim, Date datum, String sorszam, String status, String tipus) {
+        this.cim = cim;
+        this.datum = datum;
+        this.sorszam = sorszam;
+        this.status = status;
+        this.tipus = tipus;
+    }
 
     @Id
     @Column(name = "Id")
@@ -56,11 +67,11 @@ public class MoviesEntity {
 
     @Basic
     @Column(name = "Status")
-    public byte getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(byte status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
@@ -90,5 +101,17 @@ public class MoviesEntity {
     @Override
     public int hashCode() {
         return Objects.hash(id, cim, datum, sorszam, status, tipus);
+    }
+
+    @Override
+    public String toString() {
+        return "MoviesEntity{" +
+                "id=" + id +
+                ", cim='" + cim + '\'' +
+                ", datum=" + datum +
+                ", sorszam='" + sorszam + '\'' +
+                ", status='" + status + '\'' +
+                ", tipus='" + tipus + '\'' +
+                '}';
     }
 }

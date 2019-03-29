@@ -9,11 +9,8 @@
    <title>Facelet Title</title>
 </h:head>
 <h:body>
-   <ui:composition template="template.xhtml">
-      <ui:define name="title">Title</ui:define>
-      <ui:define name="top">Top</ui:define>
+   <ui:composition template="templates/common.xhtml">
       <ui:define name="content">
-
          <h:form>
             <h:outputLabel for="txtName">
                <h:outputText value="Enter product name:"/>
@@ -36,8 +33,8 @@
 
             <h:commandButton id="cmdInsert" value="Add Item" action="#{obj.add}"/>
          </h:form>
-
       </ui:define>
+
 
    </ui:composition>
 
