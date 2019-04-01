@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="InfSysBuildv2.0">
+  <artifact type="exploded-war" name="InfSysBuildv">
     <output-path>$PROJECT_DIR$/out/artifacts/InfSysBuildv2_0.war</output-path>
     <root id="root">
       <element id="javaee-facet-resources" facet="InfSysBuildv2.0/web/Web" />
