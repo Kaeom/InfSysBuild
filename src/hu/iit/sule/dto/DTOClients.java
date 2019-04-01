@@ -4,6 +4,7 @@ import hu.iit.sule.model.ClientsEntity;
 import hu.iit.sule.model.MoviesEntity;
 import hu.iit.sule.model.RentingEntity;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,6 +36,20 @@ public class DTOClients {
             System.out.println(e.getMessage()+"DTOClients Message");
         }
         return clients;
+    }
+
+    public void addClientToDatabase(ClientsEntity client){
+        Transaction transaction = null;
+        try(Session session = HibernateUtil.getSessionFactory().openSession()){
+            transaction = session.beginTransaction();
+            session.save(client);
+            transaction.commit();
+        }catch (Exception e){
+            if(transaction != null){
+                transaction.rollback();
+            }
+            System.out.println("Add Client Exception, Message: " + e.getMessage());
+        }
     }
 
     public void deleteClient(ClientsEntity client){

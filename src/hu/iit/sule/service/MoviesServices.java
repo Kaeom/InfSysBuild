@@ -15,7 +15,7 @@ public class MoviesServices {
     private ArrayList<MoviesEntity> movies;
     DTOMovies dtoMovies = new DTOMovies();
 
-    public ArrayList<MoviesEntity> createMovies(){
+    public ArrayList<MoviesEntity> getMovies(){
         movies = (ArrayList<MoviesEntity>) dtoMovies.listAllMovie();
         System.out.println("MoviesService.createMovies"+movies.toString());
         return movies;

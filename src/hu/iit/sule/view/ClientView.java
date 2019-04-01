@@ -2,8 +2,11 @@ package hu.iit.sule.view;
 
 import hu.iit.sule.dto.DTOClients;
 import hu.iit.sule.model.ClientsEntity;
+import hu.iit.sule.service.ClientServices;
 
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -16,6 +19,9 @@ public class ClientView implements Serializable {
     private ClientsEntity selectedClient;
 
     DTOClients dtoClients = new DTOClients();
+
+    @ManagedProperty("#{clientsServices}")
+    private ClientServices services;
 
 //    @PostConstruct
 //    public void init(){
@@ -56,5 +62,9 @@ public class ClientView implements Serializable {
 
     public void editClient(ClientsEntity client){
         System.out.println(client);
+    }
+
+    public void setServices(ClientServices services){
+        this.services = services;
     }
 }

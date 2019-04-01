@@ -6,7 +6,7 @@ import hu.iit.sule.service.MoviesServices;
 
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -23,14 +23,14 @@ public class MoviesView implements Serializable {
     private MoviesServices service;
 
     public ArrayList<MoviesEntity> getMovies(){
-        movies = service.createMovies();
+        movies = service.getMovies();
         return movies;
     }
     public MoviesEntity getSelectedMovie(){
         return selectedMovie;
     }
 
-    public void addMovie(){
+    public void addMovie(MoviesEntity moviesEntity){
         System.out.println("MovieView: " + newMovie.toString());
         //service.addMovie(newMovie);
         edit = false;
