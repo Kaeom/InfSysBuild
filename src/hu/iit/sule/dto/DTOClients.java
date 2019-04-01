@@ -16,10 +16,10 @@ public class DTOClients {
 
     public List<ClientsEntity> getClients(){
         clients = new ArrayList<>();
-        ClientsEntity client1 = new ClientsEntity("Név1","Tel1","Szig1","Lakcim1",true);
-        ClientsEntity client2 = new ClientsEntity("Név2","Tel2","Szig2","Lakcim2",true);
-        ClientsEntity client3 = new ClientsEntity("Név3","Tel3","Szig3","Lakcim3",true);
-        ClientsEntity client4 = new ClientsEntity("Név4","Tel4","Szig4","Lakcim4",true);
+        ClientsEntity client1 = new ClientsEntity("Név1","Tel1","Szig1","Lakcim1");
+        ClientsEntity client2 = new ClientsEntity("Név2","Tel2","Szig2","Lakcim2");
+        ClientsEntity client3 = new ClientsEntity("Név3","Tel3","Szig3","Lakcim3");
+        ClientsEntity client4 = new ClientsEntity("Név4","Tel4","Szig4","Lakcim4");
         clients.add(client1);
         clients.add(client2);
         clients.add(client3);

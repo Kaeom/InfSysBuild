@@ -6,18 +6,17 @@ import hu.iit.sule.service.MoviesServices;
 
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ManagedBean;
-import javax.faces.view.ViewScoped;
+import javax.faces.bean.SessionScoped;
 import java.io.Serializable;
 import java.util.ArrayList;
 
 @ManagedBean(name="moviesView")
-@ViewScoped
+@SessionScoped
 public class MoviesView implements Serializable {
 
     private ArrayList<MoviesEntity> movies;
     private MoviesEntity selectedMovie;
-    private MoviesEntity newMovie;
-    private boolean edit = false;
+    private MoviesEntity newMovie = new MoviesEntity();
 
     @ManagedProperty("#{moviesServices}")
     private MoviesServices service;
@@ -26,25 +25,37 @@ public class MoviesView implements Serializable {
         movies = service.getMovies();
         return movies;
     }
-    public MoviesEntity getSelectedMovie(){
-        return selectedMovie;
-    }
 
-    public void addMovie(MoviesEntity moviesEntity){
-        System.out.println("MovieView: " + newMovie.toString());
-        //service.addMovie(newMovie);
-        edit = false;
+    public String addMovie(){
+        service.addMovie(newMovie);
+        newMovie = new MoviesEntity();
+        return "movies";
     }
 
     public void setService(MoviesServices service){
         this.service = service;
     }
 
-    public boolean isEdit() {
-        return this.edit;
+
+
+    //Getters and Setters
+    public void setMovies(ArrayList<MoviesEntity> movies) {
+        this.movies = movies;
+    }
+
+    public MoviesEntity getSelectedMovie() {
+        return selectedMovie;
+    }
+
+    public void setSelectedMovie(MoviesEntity selectedMovie) {
+        this.selectedMovie = selectedMovie;
     }
 
     public MoviesEntity getNewMovie() {
         return newMovie;
+    }
+
+    public void setNewMovie(MoviesEntity newMovie) {
+        this.newMovie = newMovie;
     }
 }

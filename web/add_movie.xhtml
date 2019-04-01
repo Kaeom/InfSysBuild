@@ -10,24 +10,25 @@
 <h:head>
     <title>Clients</title>
 </h:head>
+
 <h:body>
     <ui:composition template="templates/common.xhtml">
         <ui:define name="content">
             <h1>Add Movie</h1>
-            <p:panelGrid rendered="#{!moviesView.edit}" var="movie" value="#{moviesView.newMovie}">
-                <h3>Add Movie</h3>
+            <p:panelGrid columns="2" cellpadding="5" style="width: 80%">
                 <h:form >
                     <p>
-                        Cím <p:inputText value="#{movie.cim}"/><br/>
-                        Datum <p:inputText value="#{movie.datum}"/><br/>
-                        Típus <p:inputText value="#{movie.tipus}"/><br/>
-                        Status <p:inputText value="#{movie.status}"/><br/>
-                        Sorszam <p:inputText value="#{movie.sorszam}"/><br/>
+                        Cím <p:inputText value="#{moviesView.newMovie.cim}"/><br/>
+                        Datum <p:inputText type="datum" value="#{moviesView.newMovie.datum}">
+                            <f:convertDateTime pattern="yyyy.MM.dd"/>
+                        </p:inputText><br/>
+                        Típus <p:inputText value="#{moviesView.newMovie.tipus}"/><br/>
+                        Status <p:inputText value="#{moviesView.newMovie.status}"/><br/>
+                        Sorszam <p:inputText value="#{moviesView.newMovie.sorszam}"/><br/>
                     </p>
                     <p>
                         <p:commandButton value="Add" action="#{moviesView.addMovie}"/>
                     </p>
-
                 </h:form>
             </p:panelGrid>
         </ui:define>

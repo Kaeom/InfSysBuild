@@ -19,7 +19,7 @@
         Client Lakcím: #{clientView.selectedClient.lakcim} <br/>
         Client SzigSzam #{clientView.selectedClient.szigSzam} <br/>
         Is Active: #{clientView.selectedClient.aktiv} <br/>
-        <p:commandButton value="Back" action="#{clientView.backToClients}"/>
+        <p:commandButton value="Back" action="index?faces-redirect=true"/>
         <p:commandButton value="getData" action="#{clientView.getSelectedClientData}"/>
 </h:form>
 

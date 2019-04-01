@@ -11,17 +11,16 @@ public class ClientsEntity {
     private String telefon;
     private String szigSzam;
     private String lakcim;
-    private boolean aktiv;
+    private boolean aktiv = true;
 
     public ClientsEntity() {
     }
 
-    public ClientsEntity(String nev, String telefon, String szigSzam, String lakcim, boolean aktiv) {
+    public ClientsEntity(String nev, String telefon, String szigSzam, String lakcim) {
         this.nev = nev;
         this.telefon = telefon;
         this.szigSzam = szigSzam;
         this.lakcim = lakcim;
-        this.aktiv = aktiv;
     }
 
     @Basic

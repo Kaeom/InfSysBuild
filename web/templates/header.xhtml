@@ -13,7 +13,10 @@
     <div id="top" class="top">
         <p:menubar>
             <p:menuitem value="Home" url="index.xhtml" />
-            <p:menuitem value="Ügyfelek listázása" url="client.xhtml"/>
+            <p:submenu label="Ügyfelek">
+                <p:menuitem value="Ügyfelek listázása" url="clients.xhtml"/>
+                <p:menuitem value="Ügyfél hozzáadása" url="add_client.xhtml"/>
+            </p:submenu>
             <p:submenu label="Filmek">
                 <p:menuitem value="Filmek listázása" url="movies.xhtml"/>
                 <p:menuitem value="Film hozzáadása" url ="add_movie.xhtml"/>

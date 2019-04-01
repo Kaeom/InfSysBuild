@@ -17,26 +17,20 @@ public class ClientView implements Serializable {
 
     private ArrayList<ClientsEntity> clients;
     private ClientsEntity selectedClient;
-
-    DTOClients dtoClients = new DTOClients();
+    private ClientsEntity newClient = new ClientsEntity();
 
     @ManagedProperty("#{clientsServices}")
     private ClientServices services;
 
-//    @PostConstruct
-//    public void init(){
-//        System.out.println("init");
-//        clients = service.createClients();
-//       // System.out.println(clients.toString());
-//    }
-
     public ArrayList<ClientsEntity> getClients(){
-        clients = (ArrayList<ClientsEntity>) dtoClients.listAllClient();
+        clients = services.getClients();
         return clients;
     }
 
-    public ClientsEntity getSelectedClient() {
-        return selectedClient;
+    public String addClient(){
+        services.addClient(newClient);
+        newClient = new ClientsEntity();
+        return "clients";
     }
 
     public void deleteClient(ClientsEntity client){
@@ -51,13 +45,12 @@ public class ClientView implements Serializable {
         return "success?faces-redirect=true";
     }
 
-    public void getSelectedClientData(){
-        System.out.println(selectedClient.toString());
+    public ClientsEntity getSelectedClient() {
+        return selectedClient;
     }
 
-    public String backToClients(){
-        selectedClient = new ClientsEntity();
-        return "client?faces-redirect=true";
+    public void getSelectedClientData(){
+        System.out.println(selectedClient.toString());
     }
 
     public void editClient(ClientsEntity client){
@@ -66,5 +59,24 @@ public class ClientView implements Serializable {
 
     public void setServices(ClientServices services){
         this.services = services;
+    }
+
+
+    //Getters and Setters
+
+    public void setClients(ArrayList<ClientsEntity> clients) {
+        this.clients = clients;
+    }
+
+    public void setSelectedClient(ClientsEntity selectedClient) {
+        this.selectedClient = selectedClient;
+    }
+
+    public ClientsEntity getNewClient() {
+        return newClient;
+    }
+
+    public void setNewClient(ClientsEntity newClient) {
+        this.newClient = newClient;
     }
 }
