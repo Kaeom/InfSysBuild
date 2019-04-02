@@ -17,18 +17,38 @@
             <h1>Add Movie</h1>
             <p:panelGrid columns="2" cellpadding="5" style="width: 80%">
                 <h:form >
-                    <p>
-                        Cím <p:inputText value="#{moviesView.newMovie.cim}"/><br/>
-                        Datum <p:inputText type="datum" value="#{moviesView.newMovie.datum}">
-                            <f:convertDateTime pattern="yyyy.MM.dd"/>
-                        </p:inputText><br/>
-                        Típus <p:inputText value="#{moviesView.newMovie.tipus}"/><br/>
-                        Status <p:inputText value="#{moviesView.newMovie.status}"/><br/>
-                        Sorszam <p:inputText value="#{moviesView.newMovie.sorszam}"/><br/>
-                    </p>
-                    <p>
-                        <p:commandButton value="Add" action="#{moviesView.addMovie}"/>
-                    </p>
+                    <table class="tg">
+                        <tr>
+                            <th>Cím:</th>
+                            <th><p:inputText value="#{moviesView.newMovie.cim}"/></th>
+                        </tr>
+                        <tr>
+                            <th>Datum</th>
+                            <th><p:inputText type="datum" value="#{moviesView.newMovie.datum}">
+                                <f:convertDateTime pattern="yyyy.MM.dd"/>
+                            </p:inputText></th>
+                        </tr>
+                        <tr>
+                            <th>Típus</th>
+                            <th><p:inputText value="#{moviesView.newMovie.tipus}"/></th>
+                        </tr>
+                        <tr>
+                            <th>Status</th>
+                            <th><p:selectOneButton value="#{moviesView.newMovie.status}">
+                                <f:selectItem itemLabel="Kölcsönzött" itemValue="Kölcsönzött" />
+                                <f:selectItem itemLabel="Kölcsönözhető" itemValue="Kölcsönözhető" />
+                                <f:selectItem itemLabel="Selejtezett" itemValue="Selejtezett" />
+                            </p:selectOneButton></th>
+                        </tr>
+                        <tr>
+                            <th>Sorszam</th>
+                            <th><p:inputText value="#{moviesView.newMovie.sorszam}"/></th>
+                        </tr>
+                        <tr>
+                            <th> <p:commandButton value="Add" action="#{moviesView.addMovie}"/></th>
+                            <th>asd</th>
+                        </tr>
+                    </table>
                 </h:form>
             </p:panelGrid>
         </ui:define>

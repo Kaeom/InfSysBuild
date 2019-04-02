@@ -53,7 +53,20 @@ public class DTOClients {
     }
 
     public void deleteClient(ClientsEntity client){
-        clients.remove(client);
+        Transaction transaction = null;
+        try(Session session = HibernateUtil.getSessionFactory().openSession()){
+            transaction = session.beginTransaction();
+            ClientsEntity deletedClient = (ClientsEntity)session.load(ClientsEntity.class,client.getId());
+            System.out.println("törlendő kliens: " + deletedClient.toString());
+            session.delete(deletedClient);
+            transaction.commit();
+            System.out.println("kliens törölve");
+        }catch(Exception e){
+            if(transaction != null){
+                transaction.rollback();
+            }
+            System.out.println("Client delete exception: " + e.getMessage());
+        }
     }
 
 

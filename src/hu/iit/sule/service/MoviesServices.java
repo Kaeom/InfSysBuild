@@ -11,7 +11,6 @@ import java.util.ArrayList;
 @ManagedBean(name="moviesServices")
 @ApplicationScoped
 public class MoviesServices {
-
     private ArrayList<MoviesEntity> movies;
     DTOMovies dtoMovies = new DTOMovies();
 
@@ -20,9 +19,11 @@ public class MoviesServices {
         System.out.println("MoviesService.createMovies"+movies.toString());
         return movies;
     }
-
     public void addMovie(MoviesEntity movie){
         System.out.println("Debug: Movies Services addMovie: " + movie.toString());
         dtoMovies.addMovieToDatabase(movie);
+    }
+    public void deleteMovie(MoviesEntity movie){
+        dtoMovies.deleteMovie(movie);
     }
 }

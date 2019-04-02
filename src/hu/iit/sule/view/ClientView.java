@@ -33,20 +33,17 @@ public class ClientView implements Serializable {
         return "clients";
     }
 
-    public void deleteClient(ClientsEntity client){
+    public String deleteClient(ClientsEntity client){
         System.out.println(client.toString());
-        //service.deleteClient(client);
+        services.deleteClient(client);
+        return "clients?faces-redirect=true";
     }
 
     public String dataClient(ClientsEntity client){
         selectedClient = client;
         getSelectedClientData();
         System.out.println(client.toString());
-        return "success?faces-redirect=true";
-    }
-
-    public ClientsEntity getSelectedClient() {
-        return selectedClient;
+        return "client_data?faces-redirect=true";
     }
 
     public void getSelectedClientData(){
@@ -68,8 +65,16 @@ public class ClientView implements Serializable {
         this.clients = clients;
     }
 
+    public ClientServices getServices() {
+        return services;
+    }
+
     public void setSelectedClient(ClientsEntity selectedClient) {
         this.selectedClient = selectedClient;
+    }
+
+    public ClientsEntity getSelectedClient() {
+        return selectedClient;
     }
 
     public ClientsEntity getNewClient() {

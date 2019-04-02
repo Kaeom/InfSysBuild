@@ -32,6 +32,11 @@ public class MoviesView implements Serializable {
         return "movies";
     }
 
+    public String deleteMovie(MoviesEntity movie){
+        service.deleteMovie(movie);
+        return "movies?faces-redirect=true";
+    }
+
     public void setService(MoviesServices service){
         this.service = service;
     }

@@ -57,4 +57,19 @@ public class DTOMovies {
         }
     }
 
+    public void deleteMovie(MoviesEntity movie){
+        Transaction transaction = null;
+        try(Session session = HibernateUtil.getSessionFactory().openSession()){
+            transaction = session.beginTransaction();
+            MoviesEntity deleteMovie = (MoviesEntity)session.load(MoviesEntity.class,movie.getId());
+            session.delete(deleteMovie);
+            transaction.commit();
+        }catch (Exception e){
+            if(transaction != null){
+                transaction.rollback();
+            }
+            System.out.println("Movie delete exception: " + e.getMessage());
+        }
+    }
+
 }

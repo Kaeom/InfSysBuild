@@ -33,6 +33,9 @@
                     <p:column headerText="Típus">
                         <h:outputText value="#{moviesentity.tipus}" />
                     </p:column>
+                    <p:column>
+                        <h:commandButton value="Törlés" action="#{moviesView.deleteMovie(moviesentity)}"/>
+                    </p:column>
                 </p:dataTable>
             </h:form>
         </ui:define>

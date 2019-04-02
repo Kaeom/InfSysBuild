@@ -22,4 +22,8 @@ public class ClientServices {
     public void addClient(ClientsEntity client){
         dtoClients.addClientToDatabase(client);
     }
+
+    public void deleteClient(ClientsEntity client){
+        dtoClients.deleteClient(client);
+    }
 }
