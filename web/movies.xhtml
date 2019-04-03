@@ -14,23 +14,25 @@
     <ui:composition template="templates/common.xhtml">
         <ui:define name="content">
                 <h:form>
-                <p:dataTable var="moviesentity" value="#{moviesView.movies}" style="width: 80%">
-                    <p:column headerText="Id">
+                <p:dataTable var="moviesentity" value="#{moviesView.movies}" style="width: 80%" rows="10"  paginator="true"
+                             paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                             rowsPerPageTemplate="5,10,15">
+                    <p:column filterBy="#{moviesentity.id}" headerText="Id">
                         <h:outputText value="#{moviesentity.id}" />
                     </p:column>
-                    <p:column headerText="Cím">
+                    <p:column filterBy="#{moviesentity.cim}" headerText="Cím">
                         <h:outputText value="#{moviesentity.cim}" />
                     </p:column>
-                    <p:column headerText="Dátum">
+                    <p:column filterBy="#{moviesentity.datum}" headerText="Dátum">
                         <h:outputText value="#{moviesentity.datum}" />
                     </p:column>
-                    <p:column headerText="Sorszám">
+                    <p:column filterBy="#{moviesentity.sorszam}" headerText="Sorszám">
                         <h:outputText value="#{moviesentity.sorszam}" />
                     </p:column>
-                    <p:column headerText="Státus">
+                    <p:column filterBy="#{moviesentity.status}" headerText="Státus">
                         <h:outputText value="#{moviesentity.status}" />
                     </p:column>
-                    <p:column headerText="Típus">
+                    <p:column filterBy="#{moviesentity.tipus}" headerText="Típus">
                         <h:outputText value="#{moviesentity.tipus}" />
                     </p:column>
                     <p:column>

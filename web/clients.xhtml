@@ -12,23 +12,25 @@
         <ui:define name="content">
 
             <h:form>
-                <p:dataTable var="clientsentity" value="#{clientView.clients}" style="width: 80%">
-                    <p:column headerText="Id">
+                <p:dataTable var="clientsentity" value="#{clientView.clients}" style="width: 80%" rows="10"  paginator="true"
+                             paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                             rowsPerPageTemplate="5,10,15">
+                    <p:column filterBy="#{clientsentity.id}" headerText="Id">
                         <h:outputText value="#{clientsentity.id}" />
                     </p:column>
-                    <p:column headerText="Név">
+                    <p:column filterBy="#{clientsentity.nev}" headerText="Név">
                         <h:outputText value="#{clientsentity.nev}" />
                     </p:column>
-                    <p:column headerText="Telefon">
+                    <p:column filterBy="#{clientsentity.telefon}" headerText="Telefon">
                         <h:outputText value="#{clientsentity.telefon}" />
                     </p:column>
-                    <p:column headerText="SzigSzam">
+                    <p:column filterBy="#{clientsentity.szigSzam}" headerText="SzigSzam">
                         <h:outputText value="#{clientsentity.szigSzam}" />
                     </p:column>
-                    <p:column headerText="Lakcím">
+                    <p:column filterBy="#{clientsentity.lakcim}" headerText="Lakcím">
                         <h:outputText value="#{clientsentity.lakcim}" />
                     </p:column>
-                    <p:column headerText="Aktív">
+                    <p:column filterBy="#{clientsentity.aktiv}" headerText="Aktív">
                         <h:outputText value="#{clientsentity.aktiv}" />
                     </p:column>
                     <p:column headerText="Törlés">
