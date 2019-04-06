@@ -14,31 +14,67 @@
     <ui:composition template="templates/common.xhtml">
         <ui:define name="content">
                 <h:form>
-                <p:dataTable var="moviesentity" value="#{moviesView.movies}" style="width: 80%" rows="10"  paginator="true"
+                <p:dataTable var="moviesentity" value="#{moviesView.movies}" style="width: 100%" rows="10"  paginator="true"
                              paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                              rowsPerPageTemplate="5,10,15">
                     <p:column filterBy="#{moviesentity.id}" headerText="Id">
-                        <h:outputText value="#{moviesentity.id}" />
+                        <h:outputText value="#{moviesentity.id}" rendered="#{moviesentity.id != moviesView.editedMovie.id}"/>
+                        <p:inputText value="#{moviesView.editedMovie.id}" size="13" rendered="#{moviesentity.id == moviesView.editedMovie.id}"/>
                     </p:column>
+
                     <p:column filterBy="#{moviesentity.cim}" headerText="Cím">
-                        <h:outputText value="#{moviesentity.cim}" />
+                        <h:outputText value="#{moviesentity.cim}" rendered="#{moviesentity.id != moviesView.editedMovie.id}"/>
+                        <p:inputText value="#{moviesView.editedMovie.cim}" size="13"  rendered="#{moviesentity.id == moviesView.editedMovie.id}"/>
                     </p:column>
+
                     <p:column filterBy="#{moviesentity.datum}" headerText="Dátum">
-                        <h:outputText value="#{moviesentity.datum}" >
-                            <f:convertDateTime pattern="yyyy-MM-dd" />
+                        <h:outputText value="#{moviesentity.datum}" rendered="#{moviesentity.id != moviesView.editedMovie.id}">
+                            <f:convertDateTime pattern="yyyy.MM.dd" />
                         </h:outputText>
+                        <p:inputMask value="#{moviesView.editedMovie.datum}" size="13" rendered="#{moviesentity.id == moviesView.editedMovie.id}" mask="9999.99.99">
+                            <f:convertDateTime pattern="yyyy.MM.dd"/>
+                        </p:inputMask>
                     </p:column>
+
                     <p:column filterBy="#{moviesentity.sorszam}" headerText="Sorszám">
-                        <h:outputText value="#{moviesentity.sorszam}" />
+                        <h:outputText value="#{moviesentity.sorszam}" rendered="#{moviesentity.id != moviesView.editedMovie.id}"/>
+                        <p:inputText value="#{moviesView.editedMovie.sorszam}" size="13" rendered="#{moviesentity.id == moviesView.editedMovie.id}"/>
                     </p:column>
+
                     <p:column filterBy="#{moviesentity.status}" headerText="Státus">
-                        <h:outputText value="#{moviesentity.status}" />
+                        <h:outputText value="#{moviesentity.status}" rendered="#{moviesentity.id != moviesView.editedMovie.id}"/>
+
+                        <p:selectOneMenu value="#{moviesView.editedMovie.status}" size="13" rendered="#{moviesentity.id == moviesView.editedMovie.id}">
+                            <f:selectItem itemLabel="Available" itemValue="Available" />
+                            <f:selectItem itemLabel="Selejtezett" itemValue="Selejtezett" />
+                        </p:selectOneMenu>
                     </p:column>
+
                     <p:column filterBy="#{moviesentity.tipus}" headerText="Típus">
-                        <h:outputText value="#{moviesentity.tipus}" />
+                        <h:outputText value="#{moviesentity.tipus}" rendered="#{moviesentity.id != moviesView.editedMovie.id}"/>
+                        <p:selectOneMenu value="#{moviesView.editedMovie.tipus}" size="13" rendered="#{moviesentity.id == moviesView.editedMovie.id}">
+                            <f:selectItem itemLabel="DVD" itemValue="DVD"/>
+                            <f:selectItem itemLabel="VHS" itemValue="VHS"/>
+                        </p:selectOneMenu>
                     </p:column>
-                    <p:column>
+
+
+                    <p:column headerText="Törlés">
                         <h:commandButton value="Törlés" rendered="#{moviesentity.status != 'Rented'}" action="#{moviesView.deleteMovie(moviesentity)}"/>
+                    </p:column>
+                    <p:column headerText="Szerkesztés">
+                        <h:commandButton id="editBtn" value="Szerkesztés" rendered="#{moviesentity.status != 'Rented' and !moviesView.moviesIsEdited}" action="#{moviesView.selectMovieToedit(moviesentity)}"/>
+                        <h:commandButton value="Mentés" rendered="#{moviesentity.status != 'Rented' and moviesView.moviesIsEdited}" action="#{moviesView.saveEditedMovie}"/>
+                        <!--<p:overlayPanel for="editBtn" hideEffect="fade" dynamic="true" style="width:600px">-->
+                                <!--<p:dataGrid columns="2">-->
+                                    <!--<p:inputText value="#{moviesView.editedMovie.id}"/>-->
+                                    <!--<p:inputText value="#{moviesView.editedMovie.cim}"/>-->
+                                    <!--<p:inputText value="#{moviesView.editedMovie.datum}"/>-->
+                                    <!--<p:inputText value="#{moviesView.editedMovie.sorszam}"/>-->
+                                    <!--<p:inputText value="#{moviesView.editedMovie.status}"/>-->
+                                    <!--<p:inputText value="#{moviesView.editedMovie.tipus}"/>-->
+                                <!--</p:dataGrid>-->
+                            <!--</p:overlayPanel>-->
                     </p:column>
                 </p:dataTable>
             </h:form>

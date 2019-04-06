@@ -27,8 +27,6 @@ public class ClientsEntity {
     @Column(name = "Aktiv")
     private boolean aktiv = true;
 
-    private boolean isEdit = false;
-
     public ClientsEntity() {
     }
 
@@ -92,14 +90,6 @@ public class ClientsEntity {
         return aktiv;
     }
 
-    public boolean isEdit() {
-        return isEdit;
-    }
-
-    public void setEdit(boolean edit) {
-        isEdit = edit;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -110,13 +100,12 @@ public class ClientsEntity {
                 Objects.equals(nev, that.nev) &&
                 Objects.equals(telefon, that.telefon) &&
                 Objects.equals(szigSzam, that.szigSzam) &&
-                Objects.equals(lakcim, that.lakcim) &&
-                Objects.equals(isEdit, that.isEdit);
+                Objects.equals(lakcim, that.lakcim);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nev, telefon, szigSzam, lakcim, id, aktiv,isEdit);
+        return Objects.hash(nev, telefon, szigSzam, lakcim, id, aktiv);
     }
 
     @Override
@@ -128,7 +117,6 @@ public class ClientsEntity {
                 ", szigSzam='" + szigSzam + '\'' +
                 ", lakcim='" + lakcim + '\'' +
                 ", aktiv=" + aktiv +
-                ", isEdit=" + isEdit +
                 '}';
     }
 }

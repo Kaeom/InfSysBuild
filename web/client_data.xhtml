@@ -13,30 +13,42 @@
 <ui:define name="content">
         <h:form>
                 <h2>Kliens adatai:</h2>
-                <p:panelGrid columns="2">
+                <p:panelGrid columns="2" style="width: 50%">
                         <h:outputText value="ID:"/>
-                        <h:outputText value="#{clientView.selectedClient.id}"/>
+                        <h:outputText value="#{clientView.selectedClient.id}" rendered="#{not clientView.edit}"/>
+                        <p:inputText value="#{clientView.editedClient.id}" rendered="#{clientView.edit}"/>
 
                         <h:outputText value="Name:"/>
-                        <h:outputText value="#{clientView.selectedClient.nev}"/>
+                        <h:outputText value="#{clientView.selectedClient.nev}" rendered="#{not clientView.edit}"/>
+                        <p:inputText value="#{clientView.editedClient.nev}" rendered="#{clientView.edit}"/>
 
                         <h:outputText value="Tel:"/>
-                        <h:outputText value="#{clientView.selectedClient.telefon}"/>
+                        <h:outputText value="#{clientView.selectedClient.telefon}" rendered="#{not clientView.edit}"/>
+                        <p:inputMask value="#{clientView.editedClient.telefon}" rendered="#{clientView.edit}" mask="99-99-999-99-99"/>
 
                         <h:outputText value="Lakcím:"/>
-                        <h:outputText value="#{clientView.selectedClient.lakcim}"/>
+                        <h:outputText value="#{clientView.selectedClient.lakcim}" rendered="#{not clientView.edit}"/>
+                        <p:inputText value="#{clientView.editedClient.lakcim}" rendered="#{clientView.edit}"/>
 
                         <h:outputText value="SzigSzam:"/>
-                        <h:outputText value="#{clientView.selectedClient.szigSzam}"/>
+                        <h:outputText value="#{clientView.selectedClient.szigSzam}" rendered="#{not clientView.edit}"/>
+                        <p:inputMask value="#{clientView.editedClient.szigSzam}" rendered="#{clientView.edit}" mask="999999aa"/>
 
                         <h:outputText value="Active:"/>
-                        <h:outputText value="#{clientView.selectedClient.aktiv}"/>
+                        <h:outputText value="#{clientView.selectedClient.aktiv? 'Aktív' : 'Nem aktív'}" rendered="#{not clientView.edit}"/>
+                        <p:selectOneButton value="#{clientView.editedClient.aktiv}" rendered="#{clientView.edit}">
+                                <f:selectItem itemLabel="Aktív" itemValue="true"/>
+                                <f:selectItem itemLabel="Nem aktív" itemValue="false"/>
+                        </p:selectOneButton>
                 </p:panelGrid>
+                <h:commandButton value="Edit" action="#{clientView.changeEdit}" rendered="#{!clientView.edit}"/>
+                <h:commandButton value="Save" action="#{clientView.saveClient}" rendered="#{clientView.edit}"/>
+                <h:commandButton value="Back" action="clients.xhtml" />
         </h:form>
 
         <h2>Kölcsönözhető filmek:</h2>
         <h:form>
-                <p:dataTable var="moviesentity" value="#{moviesView.movies}" style="width: 80%" rows="10"  paginator="true"
+                <p:dataTable var="moviesentity" value="#{moviesView.movies}" style="width: 100%" rows="10"  paginator="true"
                              paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                              rowsPerPageTemplate="5,10,15">
                         <p:column filterBy="#{moviesentity.id}" headerText="Id">
@@ -59,15 +71,15 @@
                         <p:column filterBy="#{moviesentity.tipus}" headerText="Típus">
                                 <h:outputText value="#{moviesentity.tipus}" />
                         </p:column>
-                        <p:column headerText="Kölcsonzés" rendered="#{moviesentity.status != 'Rented'}">
-                                <h:commandButton value="Kölcsönzés" action="#{clientView.saveRenting(moviesentity)}"/>
+                        <p:column headerText="Kölcsonzés">
+                                <h:commandButton value="Kölcsönzés" action="#{clientView.saveRenting(moviesentity)}" rendered="#{moviesentity.status != 'Rented'}"/>
                         </p:column>
                 </p:dataTable>
         </h:form>
 
         <h2>Kölcsönzött filmek</h2>
         <h:form>
-                <p:dataTable var="renting" value="#{clientView.selectedClientRentings}" style="width: 80%" rows="10"  paginator="true"
+                <p:dataTable var="renting" value="#{clientView.selectedClientRentings}" style="width: 100%" rows="10"  paginator="true"
                              paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                              rowsPerPageTemplate="5,10,15">
                         <p:column headerText="Renting ID">
@@ -103,7 +115,7 @@
                                 style="#{clientView.getDaysFromEnd(renting.rentindEnd) > 1 ? 'color:red;' : 'color:blue;'}"/>
                         </p:column>
                         <p:column headerText="Kölcsönzés törlése">
-                                <p:commandButton value="Visszahozatal" action="#{clientView.deleteRenting(renting)}"/>
+                                <p:commandButton value="Visszahoz" action="#{clientView.deleteRenting(renting)}"/>
                         </p:column>
                 </p:dataTable>
         </h:form>

@@ -59,16 +59,28 @@ public class DTOMovies {
         }
     }
 
+    public static void editMovie(MoviesEntity movie){
+        Transaction transaction = null;
+        try(Session session = HibernateUtil.getSessionFactory().openSession()){
+            transaction = session.beginTransaction();
+            session.update(movie);
+            transaction.commit();
+        }catch(Exception e){
+            if(transaction != null){
+                transaction.rollback();
+            }
+            System.out.println("movie delete exception: " + e.getMessage());
+        }
+    }
+
     public static void setMovieToRented(int movieID){
         Transaction transaction = null;
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
             transaction = session.beginTransaction();
             MoviesEntity updatedmovie = (MoviesEntity)session.load(MoviesEntity.class,movieID);
             updatedmovie.setStatus("Rented");
-            System.out.println("updated movie: " + updatedmovie.toString());
             session.update(updatedmovie);
             transaction.commit();
-            System.out.println("movie status módosítva");
         }catch(Exception e){
             if(transaction != null){
                 transaction.rollback();
@@ -82,10 +94,8 @@ public class DTOMovies {
             transaction = session.beginTransaction();
             MoviesEntity updatedmovie = (MoviesEntity)session.load(MoviesEntity.class,movieID);
             updatedmovie.setStatus("Available");
-            System.out.println("updated movie: " + updatedmovie.toString());
             session.update(updatedmovie);
             transaction.commit();
-            System.out.println("movie status módosítva");
         }catch(Exception e){
             if(transaction != null){
                 transaction.rollback();

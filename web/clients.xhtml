@@ -12,36 +12,34 @@
         <ui:define name="content">
 
             <h:form>
-                <p:dataTable var="clientsentity" value="#{clientView.clients}" widgetVar="clientsTable" style="width: 80%" rows="10"  paginator="true"
+                <p:dataTable var="clientsentity" value="#{clientView.clients}" widgetVar="clientsTable" style="width: 100%" rows="10"  paginator="true"
                              paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                              rowsPerPageTemplate="5,10,15">
                     <p:column filterBy="#{clientsentity.id}" headerText="Id">
-                        <h:outputText value="#{clientsentity.id}" rendered="#{not clientsentity.edit}"/>
+                        <h:outputText value="#{clientsentity.id}"/>
                     </p:column>
                     <p:column filterBy="#{clientsentity.nev}" headerText="Név">
-                        <h:outputText value="#{clientsentity.nev}"  rendered="#{not clientsentity.edit}"/>
+                        <h:outputText value="#{clientsentity.nev}"/>
                     </p:column>
                     <p:column filterBy="#{clientsentity.telefon}" headerText="Telefon">
-                        <h:outputText value="#{clientsentity.telefon}"  rendered="#{not clientsentity.edit}"/>
+                        <h:outputText value="#{clientsentity.telefon}"/>
                     </p:column>
                     <p:column filterBy="#{clientsentity.szigSzam}" headerText="SzigSzam">
-                        <h:outputText value="#{clientsentity.szigSzam}"  rendered="#{not clientsentity.edit}"/>
+                        <h:outputText value="#{clientsentity.szigSzam}"/>
                     </p:column>
                     <p:column filterBy="#{clientsentity.lakcim}" headerText="Lakcím">
-                        <h:outputText value="#{clientsentity.lakcim}"  rendered="#{not clientsentity.edit}"/>
+                        <h:outputText value="#{clientsentity.lakcim}"/>
                     </p:column>
-                    <p:column filterBy="#{clientsentity.aktiv}">
+                    <p:column headerText="Aktív">
+                    <!--<p:column filterBy="#{clientsentity.aktiv}">-->
                         <f:facet name="filter">
-                            <p:selectOneButton onchange="PF('clientsTable').filter()" styleClass="custom-filter">
+                            <p:selectOneMenu  onchange="PF('clientsTable').filter()" styleClass="custom-filter">
                                 <f:converter converterId="javax.faces.Boolean" />
-                                <f:selectItem itemLabel="Aktív" itemValue="true" />
+                                <f:selectItem itemLabel="Aktív" itemValue="true"/>
                                 <f:selectItem itemLabel="Nem Aktív" itemValue="false" />
-                            </p:selectOneButton>
+                            </p:selectOneMenu>
                         </f:facet>
-                        <h:outputText value="#{clientsentity.aktiv}"  rendered="#{not clientsentity.edit}"/>
-                    </p:column>
-                    <p:column>
-                        <h:outputText value="#{clientsentity.edit}"  rendered="#{not clientsentity.edit}"/>
+                        <h:outputText value="#{clientsentity.aktiv? 'Aktív' : 'Nem aktív'}"/>
                     </p:column>
 
                     <p:column headerText="Adatlap">

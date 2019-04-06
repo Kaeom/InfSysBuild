@@ -17,10 +17,13 @@ import java.util.Date;
 public class ClientView implements Serializable {
 
     private ArrayList<ClientsEntity> clients;
+
     private ClientsEntity selectedClient;
+    private ArrayList<RentingByClient> selectedClientRentings;
+
     private ClientsEntity editedClient;
     private ClientsEntity newClient = new ClientsEntity();
-    private ArrayList<RentingByClient> selectedClientRentings;
+    private boolean edit = false;
 
     @ManagedProperty("#{clientsServices}")
     private ClientServices services;
@@ -42,8 +45,23 @@ public class ClientView implements Serializable {
         return "clients?faces-redirect=true";
     }
 
+    //To clients Editing
+    public String changeEdit(){
+        edit = !edit;
+        editedClient = selectedClient;
+        return "client_data?faces-redirect=true";
+    }
+
+    public String saveClient(){
+        System.out.println("Clients mentése: " + editedClient);
+        services.editClient(editedClient);
+        changeEdit();
+        return "client_data?faces-redirect=true";
+    }
+
     // To show client data + rented movies
     public String dataClient(ClientsEntity client){
+        System.out.println("Selected clients: " + client.toString());
         selectedClient = client;
         getRentingByClientID();
         return "client_data?faces-redirect=true";
@@ -53,21 +71,21 @@ public class ClientView implements Serializable {
         selectedClientRentings = services.getRentingByClient(selectedClient);
         return selectedClientRentings;
     }
+    //-------------------//
 
     public void setDataClient(ClientsEntity client){
         selectedClient = client;
     }
 
     //To Save Renting
-    public String saveRenting(MoviesEntity moviesEntity){
+    public void saveRenting(MoviesEntity moviesEntity){
         services.saveRetings(moviesEntity,selectedClient);
-        return "client_data";
     }
 
     //To delete renting
-    public String deleteRenting(RentingByClient renting){
+    public void deleteRenting(RentingByClient renting){
         services.deleteRenting(renting);
-        return "client_data";
+
     }
 
     //To get days from end
@@ -121,4 +139,13 @@ public class ClientView implements Serializable {
     public void setSelectedClientRentings(ArrayList<RentingByClient> selectedClientRentings) {
         this.selectedClientRentings = selectedClientRentings;
     }
+
+    public boolean isEdit() {
+        return edit;
+    }
+
+    public void setEdit(boolean edit) {
+        this.edit = edit;
+    }
+
 }

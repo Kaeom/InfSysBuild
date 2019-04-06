@@ -43,10 +43,8 @@ public class DTOClients {
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
             transaction = session.beginTransaction();
             ClientsEntity deletedClient = (ClientsEntity)session.load(ClientsEntity.class,client.getId());
-            System.out.println("törlendő kliens: " + deletedClient.toString());
             session.delete(deletedClient);
             transaction.commit();
-            System.out.println("kliens törölve");
         }catch(Exception e){
             if(transaction != null){
                 transaction.rollback();
@@ -59,11 +57,8 @@ public class DTOClients {
         Transaction transaction = null;
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
             transaction = session.beginTransaction();
-            ClientsEntity updateClient = (ClientsEntity)session.load(ClientsEntity.class,client.getId());
-            System.out.println("módosított kilines: " + updateClient.toString());
-            session.update(updateClient);
+            session.update(client);
             transaction.commit();
-            System.out.println("clients módosítva");
         }catch(Exception e){
             if(transaction != null){
                 transaction.rollback();

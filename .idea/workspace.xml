@@ -8,9 +8,20 @@
   <component name="ChangeListManager">
     <list default="true" id="6d9cd479-912e-42c0-9670-cfa7b6d6dcfd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hu/iit/sule/service/ClientServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hu/iit/sule/service/ClientServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/infsysbuild.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hu/iit/sule/dto/DTOClients.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hu/iit/sule/dto/DTOClients.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hu/iit/sule/dto/DTOMovies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hu/iit/sule/dto/DTOMovies.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hu/iit/sule/model/ClientsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hu/iit/sule/model/ClientsEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hu/iit/sule/service/MoviesServices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hu/iit/sule/service/MoviesServices.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hu/iit/sule/service/RentingServices.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/hu/iit/sule/view/ClientView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hu/iit/sule/view/ClientView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hu/iit/sule/view/MoviesView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hu/iit/sule/view/MoviesView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/add_client.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/add_client.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/client_data.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/client_data.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/clients.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/clients.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/movies.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/movies.xhtml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,86 +62,47 @@
     <session id="-1525911222">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="54" />
-          <entry key="xhtml" value="12" />
+          <entry key="java" value="73" />
+          <entry key="xhtml" value="35" />
           <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="54" />
-          <entry key="XHTML" value="12" />
+          <entry key="JAVA" value="73" />
+          <entry key="XHTML" value="35" />
           <entry key="XML" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="16" />
-          <entry key="java" value="3708" />
-          <entry key="xhtml" value="1537" />
+          <entry key="java" value="4561" />
+          <entry key="xhtml" value="2551" />
           <entry key="xml" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3708" />
+          <entry key="JAVA" value="4561" />
           <entry key="PLAIN_TEXT" value="16" />
-          <entry key="XHTML" value="1537" />
+          <entry key="XHTML" value="2551" />
           <entry key="XML" value="23" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.44251406">
-      <split-first>
-        <leaf>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/view/ClientView.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="74" column="54" selection-start-line="74" selection-start-column="54" selection-end-line="74" selection-end-column="54" />
-                  <folding>
-                    <element signature="e#2178#2179#0" expanded="true" />
-                    <element signature="e#2234#2235#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/service/ClientServices.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="367">
-                  <caret line="71" column="22" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/web/client_data.xhtml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="421">
-                  <caret line="101" column="114" lean-forward="true" selection-start-line="101" selection-start-column="114" selection-end-line="101" selection-end-column="114" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -143,6 +115,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>saveRenting</find>
+      <find>edit</find>
+      <find>selectedClientsRentingDB</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -171,26 +145,26 @@
         <option value="$PROJECT_DIR$/web/success.xhtml" />
         <option value="$PROJECT_DIR$/web/templates/header.xhtml" />
         <option value="$PROJECT_DIR$/web/templates/footer.xhtml" />
-        <option value="$PROJECT_DIR$/src/hu/iit/sule/view/MoviesView.java" />
-        <option value="$PROJECT_DIR$/web/add_client.xhtml" />
-        <option value="$PROJECT_DIR$/src/hu/iit/sule/model/ClientsEntity.java" />
         <option value="$PROJECT_DIR$/src/hibernate.cfg.xml" />
         <option value="$PROJECT_DIR$/src/hu/iit/sule/dto/RentingByClients.java" />
         <option value="$PROJECT_DIR$/src/hu/iit/sule/dto/RentingByClient.java" />
-        <option value="$PROJECT_DIR$/src/hu/iit/sule/dto/DTOClients.java" />
         <option value="$PROJECT_DIR$/src/hu/iit/sule/model/RentingByClient.java" />
         <option value="$PROJECT_DIR$/src/hu/iit/sule/dto/GenRentingByClient.java" />
-        <option value="$PROJECT_DIR$/src/hu/iit/sule/service/MoviesServices.java" />
         <option value="$PROJECT_DIR$/src/hu/iit/sule/model/RentingEntity.java" />
         <option value="$PROJECT_DIR$/src/hu/iit/sule/service/RentingServices.java" />
-        <option value="$PROJECT_DIR$/src/hu/iit/sule/dto/DTOMovies.java" />
         <option value="$PROJECT_DIR$/web/add_movie.xhtml" />
         <option value="$PROJECT_DIR$/src/hu/iit/sule/dto/DTORentings.java" />
-        <option value="$PROJECT_DIR$/web/clients.xhtml" />
-        <option value="$PROJECT_DIR$/web/movies.xhtml" />
-        <option value="$PROJECT_DIR$/src/hu/iit/sule/view/ClientView.java" />
         <option value="$PROJECT_DIR$/src/hu/iit/sule/service/ClientServices.java" />
+        <option value="$PROJECT_DIR$/src/hu/iit/sule/model/ClientsEntity.java" />
+        <option value="$PROJECT_DIR$/src/hu/iit/sule/service/MoviesServices.java" />
+        <option value="$PROJECT_DIR$/src/hu/iit/sule/view/MoviesView.java" />
+        <option value="$PROJECT_DIR$/web/add_client.xhtml" />
+        <option value="$PROJECT_DIR$/web/movies.xhtml" />
+        <option value="$PROJECT_DIR$/web/clients.xhtml" />
         <option value="$PROJECT_DIR$/web/client_data.xhtml" />
+        <option value="$PROJECT_DIR$/src/hu/iit/sule/view/ClientView.java" />
+        <option value="$PROJECT_DIR$/src/hu/iit/sule/dto/DTOClients.java" />
+        <option value="$PROJECT_DIR$/src/hu/iit/sule/dto/DTOMovies.java" />
       </list>
     </option>
   </component>
@@ -201,8 +175,8 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="225" />
-    <option name="y" value="19" />
+    <option name="x" value="706" />
+    <option name="y" value="-9" />
     <option name="width" value="1649" />
     <option name="height" value="1012" />
   </component>
@@ -211,6 +185,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -286,7 +261,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -294,8 +268,8 @@
     <property name="DefaultHtmlFileTemplate" value="XHTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554560972975" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../date test" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1554577021410" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../JSF-Example-CRUD" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -416,12 +390,13 @@
       <workItem from="1554193235317" duration="4848000" />
       <workItem from="1554271824100" duration="1781000" />
       <workItem from="1554466134788" duration="16804000" />
-      <workItem from="1554559550272" duration="1410000" />
+      <workItem from="1554559550272" duration="1534000" />
+      <workItem from="1554568529062" duration="8510000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44828000" />
+    <option name="totallyTimeSpent" value="53462000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -434,9 +409,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13831478" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13950716" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -447,7 +421,7 @@
       <window_info id="Persistence" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286334" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3286334" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -467,7 +441,7 @@
       <window_info anchor="right" id="Ant Build" order="4" weight="0.25" />
       <window_info anchor="right" id="JSF" order="5" />
       <window_info anchor="right" id="Maven Projects" order="6" />
-      <window_info anchor="right" id="Database" order="7" visible="true" weight="0.08386327" />
+      <window_info anchor="right" id="Database" order="7" weight="0.08386327" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info anchor="right" id="Maven" order="10" />
@@ -555,13 +529,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/add_client.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="93" lean-forward="true" selection-start-line="21" selection-start-column="93" selection-end-line="21" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/faces-config.xml">
       <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider" />
       <provider selected="true" editor-type-id="text-editor" />
@@ -577,34 +544,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/Product.java" />
-    <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/view/MoviesView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/service/MoviesServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/model/ClientsEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/service/RentingServices.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/model/RentingEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
@@ -619,48 +558,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/dto/DTOMovies.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="775">
-          <caret line="78" column="34" selection-start-line="78" selection-start-column="34" selection-end-line="78" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/dto/GenRentingByClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="36" column="44" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/dto/DTOClients.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="57" column="4" selection-start-line="57" selection-start-column="4" selection-end-line="72" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/dto/DTORentings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="31" column="43" lean-forward="true" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/add_movie.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="40" column="80" selection-start-line="40" selection-start-column="80" selection-end-line="40" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/clients.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="47" column="88" selection-start-line="47" selection-start-column="78" selection-end-line="47" selection-end-column="88" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/model/MoviesEntity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -668,35 +565,124 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/movies.xhtml">
+    <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/model/ClientsEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="70" />
+        <state relative-caret-position="190">
+          <caret line="102" column="51" selection-start-line="102" selection-start-column="51" selection-end-line="102" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/view/ClientView.java">
+    <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/service/RentingServices.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="74" column="54" selection-start-line="74" selection-start-column="54" selection-end-line="74" selection-end-column="54" />
-          <folding>
-            <element signature="e#2178#2179#0" expanded="true" />
-            <element signature="e#2234#2235#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/service/ClientServices.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="367">
+        <state relative-caret-position="316">
           <caret line="71" column="22" selection-start-line="71" selection-start-column="22" selection-end-line="71" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/view/MoviesView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="46" column="33" selection-start-line="46" selection-start-column="18" selection-end-line="46" selection-end-column="33" />
+          <folding>
+            <element signature="e#1801#1802#0" expanded="true" />
+            <element signature="e#1838#1839#0" expanded="true" />
+            <element signature="e#1899#1900#0" expanded="true" />
+            <element signature="e#1951#1952#0" expanded="true" />
+            <element signature="e#1993#1994#0" expanded="true" />
+            <element signature="e#2023#2024#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/add_movie.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="35" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/add_client.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="21" column="102" lean-forward="true" selection-start-line="21" selection-start-column="87" selection-end-line="21" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/service/MoviesServices.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="31" column="33" selection-start-line="31" selection-start-column="33" selection-end-line="31" selection-end-column="33" />
+          <folding>
+            <element signature="e#1030#1031#0" expanded="true" />
+            <element signature="e#1067#1068#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/movies.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-595">
+          <caret line="16" column="94" selection-start-line="16" selection-start-column="94" selection-end-line="16" selection-end-column="94" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/clients.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="14" column="121" selection-start-line="14" selection-start-column="121" selection-end-line="14" selection-end-column="121" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/dto/DTOClients.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-381">
+          <caret line="21" column="68" lean-forward="true" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/dto/DTOMovies.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="707">
+          <caret line="97" column="33" selection-start-line="97" selection-start-column="33" selection-end-line="97" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/dto/DTORentings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="31" column="43" lean-forward="true" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/dto/GenRentingByClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="36" column="44" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/client_data.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="101" column="114" lean-forward="true" selection-start-line="101" selection-start-column="114" selection-end-line="101" selection-end-column="114" />
+        <state relative-caret-position="832">
+          <caret line="117" column="111" selection-start-line="117" selection-start-column="111" selection-end-line="117" selection-end-column="111" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/view/ClientView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="81" column="58" selection-start-line="81" selection-start-column="58" selection-end-line="81" selection-end-column="58" />
+          <folding>
+            <element signature="e#2378#2379#0" expanded="true" />
+            <element signature="e#2443#2444#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

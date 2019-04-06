@@ -27,4 +27,8 @@ public class MoviesServices {
     public void deleteMovie(MoviesEntity movie){
         DTOMovies.deleteMovie(movie);
     }
+
+    public void editMovie(MoviesEntity movie){
+        DTOMovies.editMovie(movie);
+    }
 }

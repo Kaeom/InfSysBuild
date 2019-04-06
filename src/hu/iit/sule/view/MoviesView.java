@@ -15,7 +15,8 @@ import java.util.ArrayList;
 public class MoviesView implements Serializable {
 
     private ArrayList<MoviesEntity> movies;
-    private MoviesEntity selectedMovie;
+    private MoviesEntity editedMovie = new MoviesEntity();
+    private boolean moviesIsEdited = false;
     private MoviesEntity newMovie = new MoviesEntity();
 
     @ManagedProperty("#{moviesServices}")
@@ -37,6 +38,19 @@ public class MoviesView implements Serializable {
         return "movies?faces-redirect=true";
     }
 
+    public String selectMovieToedit(MoviesEntity movie){
+        moviesIsEdited = true;
+        editedMovie = movie;
+        return "movies?faces-redirect=true";
+    }
+
+    public String saveEditedMovie(){
+        service.editMovie(editedMovie);
+        editedMovie = new MoviesEntity();
+        moviesIsEdited = false;
+        return null;
+    }
+
     public void setService(MoviesServices service){
         this.service = service;
     }
@@ -48,12 +62,12 @@ public class MoviesView implements Serializable {
         this.movies = movies;
     }
 
-    public MoviesEntity getSelectedMovie() {
-        return selectedMovie;
+    public MoviesEntity getEditedMovie() {
+        return editedMovie;
     }
 
-    public void setSelectedMovie(MoviesEntity selectedMovie) {
-        this.selectedMovie = selectedMovie;
+    public void setEditedMovie(MoviesEntity editedMovie) {
+        this.editedMovie = editedMovie;
     }
 
     public MoviesEntity getNewMovie() {
@@ -62,5 +76,17 @@ public class MoviesView implements Serializable {
 
     public void setNewMovie(MoviesEntity newMovie) {
         this.newMovie = newMovie;
+    }
+
+    public boolean isMoviesIsEdited() {
+        return moviesIsEdited;
+    }
+
+    public void setMoviesIsEdited(boolean moviesIsEdited) {
+        this.moviesIsEdited = moviesIsEdited;
+    }
+
+    public MoviesServices getService() {
+        return service;
     }
 }
