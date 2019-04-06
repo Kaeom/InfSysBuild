@@ -46,7 +46,9 @@
                                 <h:outputText value="#{moviesentity.cim}" />
                         </p:column>
                         <p:column filterBy="#{moviesentity.datum}" headerText="Dátum">
-                                <h:outputText value="#{moviesentity.datum}" />
+                            <h:outputText value="#{moviesentity.datum}" >
+                                <f:convertDateTime pattern="yyyy-MM-dd" />
+                            </h:outputText>
                         </p:column>
                         <p:column filterBy="#{moviesentity.sorszam}" headerText="Sorszám">
                                 <h:outputText value="#{moviesentity.sorszam}" />
@@ -87,10 +89,14 @@
                                 <h:outputText value="#{renting.movietipus}"/>
                         </p:column>
                         <p:column headerText="Kölcsonzés kezdete">
-                                <h:outputText value="#{renting.rentingStart}"/>
+                            <h:outputText value="#{renting.rentingStart}">
+                                <f:convertDateTime pattern="yyyy-MM-dd" />
+                            </h:outputText>
                         </p:column>
                         <p:column headerText="Kölcsönzés vége">
-                                <h:outputText value="#{renting.rentindEnd}"/>
+                                <h:outputText value="#{renting.rentindEnd}">
+                                    <f:convertDateTime pattern="yyyy-MM-dd" />
+                                </h:outputText>
                         </p:column>
                         <p:column headerText="Kölcsönzés törlése">
                                 <p:commandButton value="Visszahozatal" action="#{clientView.deleteRenting(renting)}"/>

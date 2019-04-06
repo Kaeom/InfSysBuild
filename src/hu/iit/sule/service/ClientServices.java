@@ -12,6 +12,7 @@ import hu.iit.sule.model.RentingEntity;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 @ManagedBean(name="clientsServices")
@@ -47,8 +48,15 @@ public class ClientServices {
 
     public void saveRetings(MoviesEntity movie, ClientsEntity selectedClient){
         RentingEntity renting;
-        Date date = new Date();
-        renting = new RentingEntity(selectedClient.getId(),movie.getId(),date,date);
+        Date dateStart = new Date();
+
+        Date dateEnd = new Date();
+        Calendar c = Calendar.getInstance();
+        c.setTime(dateEnd);
+        c.add(Calendar.DATE, 14);
+        dateEnd = c.getTime();
+
+        renting = new RentingEntity(selectedClient.getId(),movie.getId(),dateStart,dateEnd);
         DTORentings.addRentingToDatabase(renting);
         DTOMovies.setMovieToRented(movie.getId());
 

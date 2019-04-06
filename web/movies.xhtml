@@ -24,7 +24,9 @@
                         <h:outputText value="#{moviesentity.cim}" />
                     </p:column>
                     <p:column filterBy="#{moviesentity.datum}" headerText="Dátum">
-                        <h:outputText value="#{moviesentity.datum}" />
+                        <h:outputText value="#{moviesentity.datum}" >
+                            <f:convertDateTime pattern="yyyy-MM-dd" />
+                        </h:outputText>
                     </p:column>
                     <p:column filterBy="#{moviesentity.sorszam}" headerText="Sorszám">
                         <h:outputText value="#{moviesentity.sorszam}" />
