@@ -94,9 +94,13 @@
                             </h:outputText>
                         </p:column>
                         <p:column headerText="Kölcsönzés vége">
-                                <h:outputText value="#{renting.rentindEnd}">
+                                <h:outputText value="#{renting.rentindEnd}" style="#{clientView.getDaysFromEnd(renting.rentindEnd) > 1 ? 'color:red;' : 'color:blue;'}">
                                     <f:convertDateTime pattern="yyyy-MM-dd" />
                                 </h:outputText>
+                        </p:column>
+                        <p:column headerText="Késés">
+                                <h:outputText value="#{clientView.getDaysFromEnd(renting.rentindEnd) > 1 ? 'Késik!' : 'Nem Késik'}"
+                                style="#{clientView.getDaysFromEnd(renting.rentindEnd) > 1 ? 'color:red;' : 'color:blue;'}"/>
                         </p:column>
                         <p:column headerText="Kölcsönzés törlése">
                                 <p:commandButton value="Visszahozatal" action="#{clientView.deleteRenting(renting)}"/>

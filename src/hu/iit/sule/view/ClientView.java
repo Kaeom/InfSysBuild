@@ -10,6 +10,7 @@ import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 
 @ManagedBean(name="clientView")
 @SessionScoped
@@ -69,6 +70,10 @@ public class ClientView implements Serializable {
         return "client_data";
     }
 
+    //To get days from end
+    public int getDaysFromEnd(Date date){
+        return (int) services.getDaysFromEnding(date);
+    }
 
     //Getters and Setters
 

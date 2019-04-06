@@ -14,6 +14,7 @@ import javax.faces.bean.ManagedBean;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 @ManagedBean(name="clientsServices")
 @ApplicationScoped
@@ -65,4 +66,15 @@ public class ClientServices {
         DTORentings.dateRenting(renting.getId());
         DTOMovies.setMovieToAvailable(renting.getMovieID());
     }
+
+    public long getDaysFromEnding(Date end){
+        Date now = new Date();
+        long diff = 0;
+        if(now.compareTo(end) >= 1){
+            long diffInMillies = Math.abs(now.getTime() - end.getTime());
+            diff = TimeUnit.DAYS.convert(diffInMillies, TimeUnit.MILLISECONDS);
+        }
+        return diff;
+    }
+
 }
