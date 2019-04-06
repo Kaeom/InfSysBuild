@@ -24,19 +24,22 @@
                         </tr>
                         <tr>
                             <th>Datum</th>
-                            <th><p:inputText type="datum" value="#{moviesView.newMovie.datum}">
+                            <th><p:inputMask type="datum" value="#{moviesView.newMovie.datum}" mask="9999.99.99">
                                 <f:convertDateTime pattern="yyyy.MM.dd"/>
-                            </p:inputText></th>
+                            </p:inputMask></th>
                         </tr>
                         <tr>
                             <th>Típus</th>
-                            <th><p:inputText value="#{moviesView.newMovie.tipus}"/></th>
+                            <th><p:selectOneButton value="#{moviesView.newMovie.tipus}">
+                                <f:selectItem itemLabel="DVD" itemValue="DVD"/>
+                                <f:selectItem itemLabel="VHS" itemValue="VHS"/>
+                            </p:selectOneButton></th>
                         </tr>
                         <tr>
                             <th>Status</th>
                             <th><p:selectOneButton value="#{moviesView.newMovie.status}">
-                                <f:selectItem itemLabel="Kölcsönzött" itemValue="Kölcsönzött" />
-                                <f:selectItem itemLabel="Kölcsönözhető" itemValue="Kölcsönözhető" />
+                                <f:selectItem itemLabel="Available" itemValue="Available" />
+                                <f:selectItem itemLabel="Rented" itemValue="Rented" />
                                 <f:selectItem itemLabel="Selejtezett" itemValue="Selejtezett" />
                             </p:selectOneButton></th>
                         </tr>

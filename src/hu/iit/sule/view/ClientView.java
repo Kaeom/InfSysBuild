@@ -1,10 +1,10 @@
 package hu.iit.sule.view;
 
-import hu.iit.sule.dto.DTOClients;
 import hu.iit.sule.model.ClientsEntity;
+import hu.iit.sule.model.MoviesEntity;
+import hu.iit.sule.model.RentingByClient;
 import hu.iit.sule.service.ClientServices;
 
-import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
@@ -17,7 +17,9 @@ public class ClientView implements Serializable {
 
     private ArrayList<ClientsEntity> clients;
     private ClientsEntity selectedClient;
+    private ClientsEntity editedClient;
     private ClientsEntity newClient = new ClientsEntity();
+    private ArrayList<RentingByClient> selectedClientRentings;
 
     @ManagedProperty("#{clientsServices}")
     private ClientServices services;
@@ -39,23 +41,32 @@ public class ClientView implements Serializable {
         return "clients?faces-redirect=true";
     }
 
+    // To show client data + rented movies
     public String dataClient(ClientsEntity client){
         selectedClient = client;
-        getSelectedClientData();
-        System.out.println(client.toString());
+        getRentingByClientID();
         return "client_data?faces-redirect=true";
     }
 
-    public void getSelectedClientData(){
-        System.out.println(selectedClient.toString());
+    public ArrayList<RentingByClient> getRentingByClientID(){
+        selectedClientRentings = services.getRentingByClient(selectedClient);
+        return selectedClientRentings;
     }
 
-    public void editClient(ClientsEntity client){
-        System.out.println(client);
+    public void setDataClient(ClientsEntity client){
+        selectedClient = client;
     }
 
-    public void setServices(ClientServices services){
-        this.services = services;
+    //To Save Renting
+    public String saveRenting(MoviesEntity moviesEntity){
+        services.saveRetings(moviesEntity,selectedClient);
+        return "client_data";
+    }
+
+    //To delete renting
+    public String deleteRenting(RentingByClient renting){
+        services.deleteRenting(renting);
+        return "client_data";
     }
 
 
@@ -63,6 +74,10 @@ public class ClientView implements Serializable {
 
     public void setClients(ArrayList<ClientsEntity> clients) {
         this.clients = clients;
+    }
+
+    public void setServices(ClientServices services){
+        this.services = services;
     }
 
     public ClientServices getServices() {
@@ -83,5 +98,22 @@ public class ClientView implements Serializable {
 
     public void setNewClient(ClientsEntity newClient) {
         this.newClient = newClient;
+    }
+
+    public ClientsEntity getEditedClient() {
+        return editedClient;
+    }
+
+    public void setEditedClient(ClientsEntity editedClient) {
+        this.editedClient = editedClient;
+    }
+
+
+    public ArrayList<RentingByClient> getSelectedClientRentings() {
+        return selectedClientRentings;
+    }
+
+    public void setSelectedClientRentings(ArrayList<RentingByClient> selectedClientRentings) {
+        this.selectedClientRentings = selectedClientRentings;
     }
 }

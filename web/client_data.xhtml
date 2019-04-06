@@ -7,20 +7,99 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
         xmlns:p="http://primefaces.org/ui">
-<head>
-    <title>Success</title>
-</head>
-<body>
-<h:form>
-        <h1>Product Inserted</h1>
-        Client ID: #{clientView.selectedClient.id} <br/>
-        Client Name: #{clientView.selectedClient.nev} <br/>
-        Client Tel: #{clientView.selectedClient.telefon} <br/>
-        Client Lakcím: #{clientView.selectedClient.lakcim} <br/>
-        Client SzigSzam #{clientView.selectedClient.szigSzam} <br/>
-        Is Active: #{clientView.selectedClient.aktiv} <br/>
-        <p:commandButton value="Back" action="clients?faces-redirect=true"/>
-</h:form>
 
-</body>
+<h:body>
+<ui:composition template="templates/common.xhtml">
+<ui:define name="content">
+        <h:form>
+                <h2>Kliens adatai:</h2>
+                <p:panelGrid columns="2">
+                        <h:outputText value="ID:"/>
+                        <h:outputText value="#{clientView.selectedClient.id}"/>
+
+                        <h:outputText value="Name:"/>
+                        <h:outputText value="#{clientView.selectedClient.nev}"/>
+
+                        <h:outputText value="Tel:"/>
+                        <h:outputText value="#{clientView.selectedClient.telefon}"/>
+
+                        <h:outputText value="Lakcím:"/>
+                        <h:outputText value="#{clientView.selectedClient.lakcim}"/>
+
+                        <h:outputText value="SzigSzam:"/>
+                        <h:outputText value="#{clientView.selectedClient.szigSzam}"/>
+
+                        <h:outputText value="Active:"/>
+                        <h:outputText value="#{clientView.selectedClient.aktiv}"/>
+                </p:panelGrid>
+        </h:form>
+
+        <h2>Kölcsönözhető filmek:</h2>
+        <h:form>
+                <p:dataTable var="moviesentity" value="#{moviesView.movies}" style="width: 80%" rows="10"  paginator="true"
+                             paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                             rowsPerPageTemplate="5,10,15">
+                        <p:column filterBy="#{moviesentity.id}" headerText="Id">
+                                <h:outputText value="#{moviesentity.id}" />
+                        </p:column>
+                        <p:column filterBy="#{moviesentity.cim}" headerText="Cím">
+                                <h:outputText value="#{moviesentity.cim}" />
+                        </p:column>
+                        <p:column filterBy="#{moviesentity.datum}" headerText="Dátum">
+                                <h:outputText value="#{moviesentity.datum}" />
+                        </p:column>
+                        <p:column filterBy="#{moviesentity.sorszam}" headerText="Sorszám">
+                                <h:outputText value="#{moviesentity.sorszam}" />
+                        </p:column>
+                        <p:column filterBy="#{moviesentity.status}" headerText="Státus"><!--csak a kölcsönözhetőket jelenítse meg-->
+                                <h:outputText value="#{moviesentity.status}" />
+                        </p:column>
+                        <p:column filterBy="#{moviesentity.tipus}" headerText="Típus">
+                                <h:outputText value="#{moviesentity.tipus}" />
+                        </p:column>
+                        <p:column headerText="Kölcsonzés" rendered="#{moviesentity.status != 'Rented'}">
+                                <h:commandButton value="Kölcsönzés" action="#{clientView.saveRenting(moviesentity)}"/>
+                        </p:column>
+                </p:dataTable>
+        </h:form>
+
+        <h2>Kölcsönzött filmek</h2>
+        <h:form>
+                <p:dataTable var="renting" value="#{clientView.selectedClientRentings}" style="width: 80%" rows="10"  paginator="true"
+                             paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                             rowsPerPageTemplate="5,10,15">
+                        <p:column headerText="Renting ID">
+                                <h:outputText value="#{renting.id}"/>
+                        </p:column>
+                        <p:column headerText="Film Címe">
+                                <h:outputText value="#{renting.movieCim}"/>
+                        </p:column>
+                        <p:column headerText="Film datuma">
+                                <h:outputText value="#{renting.movieDatum}"/>
+                        </p:column>
+                        <p:column headerText="Film száma">
+                                <h:outputText value="#{renting.movieSorszam}"/>
+                        </p:column>
+                        <p:column headerText="Film státusza">
+                                <h:outputText value="#{renting.movieStatus}"/>
+                        </p:column>
+                        <p:column headerText="Film típusa">
+                                <h:outputText value="#{renting.movietipus}"/>
+                        </p:column>
+                        <p:column headerText="Kölcsonzés kezdete">
+                                <h:outputText value="#{renting.rentingStart}"/>
+                        </p:column>
+                        <p:column headerText="Kölcsönzés vége">
+                                <h:outputText value="#{renting.rentindEnd}"/>
+                        </p:column>
+                        <p:column headerText="Kölcsönzés törlése">
+                                <p:commandButton value="Visszahozatal" action="#{clientView.deleteRenting(renting)}"/>
+                        </p:column>
+                </p:dataTable>
+        </h:form>
+</ui:define>
+
+</ui:composition>
+
+</h:body>
 </html>

@@ -6,12 +6,28 @@ import java.util.Objects;
 @Entity
 @Table(name = "clients", schema = "infsysbuild")
 public class ClientsEntity {
+
+    @Id
+    @Column(name = "Id")
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     private int id;
+    @Basic
+    @Column(name = "Nev")
     private String nev;
+    @Basic
+    @Column(name = "Telefon")
     private String telefon;
+    @Basic
+    @Column(name = "Szig_szam")
     private String szigSzam;
+    @Basic
+    @Column(name = "Lakcim")
     private String lakcim;
+    @Basic
+    @Column(name = "Aktiv")
     private boolean aktiv = true;
+
+    private boolean isEdit = false;
 
     public ClientsEntity() {
     }
@@ -23,8 +39,7 @@ public class ClientsEntity {
         this.lakcim = lakcim;
     }
 
-    @Basic
-    @Column(name = "Nev")
+
     public String getNev() {
         return nev;
     }
@@ -33,8 +48,7 @@ public class ClientsEntity {
         this.nev = nev;
     }
 
-    @Basic
-    @Column(name = "Telefon")
+
     public String getTelefon() {
         return telefon;
     }
@@ -43,8 +57,7 @@ public class ClientsEntity {
         this.telefon = telefon;
     }
 
-    @Basic
-    @Column(name = "Szig_szam")
+
     public String getSzigSzam() {
         return szigSzam;
     }
@@ -53,8 +66,7 @@ public class ClientsEntity {
         this.szigSzam = szigSzam;
     }
 
-    @Basic
-    @Column(name = "Lakcim")
+
     public String getLakcim() {
         return lakcim;
     }
@@ -63,9 +75,7 @@ public class ClientsEntity {
         this.lakcim = lakcim;
     }
 
-    @Id
-    @Column(name = "Id")
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+
     public int getId() {
         return id;
     }
@@ -74,14 +84,20 @@ public class ClientsEntity {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "Aktiv")
-    public boolean getAktiv() {
+    public void setAktiv(boolean aktiv) {
+        this.aktiv = aktiv;
+    }
+
+    public boolean isAktiv() {
         return aktiv;
     }
 
-    public void setAktiv(boolean aktiv) {
-        this.aktiv = aktiv;
+    public boolean isEdit() {
+        return isEdit;
+    }
+
+    public void setEdit(boolean edit) {
+        isEdit = edit;
     }
 
     @Override
@@ -94,12 +110,13 @@ public class ClientsEntity {
                 Objects.equals(nev, that.nev) &&
                 Objects.equals(telefon, that.telefon) &&
                 Objects.equals(szigSzam, that.szigSzam) &&
-                Objects.equals(lakcim, that.lakcim);
+                Objects.equals(lakcim, that.lakcim) &&
+                Objects.equals(isEdit, that.isEdit);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nev, telefon, szigSzam, lakcim, id, aktiv);
+        return Objects.hash(nev, telefon, szigSzam, lakcim, id, aktiv,isEdit);
     }
 
     @Override
@@ -111,6 +128,7 @@ public class ClientsEntity {
                 ", szigSzam='" + szigSzam + '\'' +
                 ", lakcim='" + lakcim + '\'' +
                 ", aktiv=" + aktiv +
+                ", isEdit=" + isEdit +
                 '}';
     }
 }
