@@ -77,14 +77,18 @@ public class ClientView implements Serializable {
         selectedClient = client;
     }
 
-    //To Save Renting
-    public void saveRenting(MoviesEntity moviesEntity){
+    //To Save Renting to database and get selected client renting.
+    public String saveRenting(MoviesEntity moviesEntity){
         services.saveRetings(moviesEntity,selectedClient);
+        getRentingByClientID();
+        return "client_data?faces-redirect=true";
     }
 
-    //To delete renting
-    public void deleteRenting(RentingByClient renting){
+    //To delete renting from database and remove renting from selectedClientRenting list.
+    public String deleteRenting(RentingByClient renting){
         services.deleteRenting(renting);
+        selectedClientRentings.remove(renting);
+        return "client_data?faces-redirect=true";
 
     }
 
