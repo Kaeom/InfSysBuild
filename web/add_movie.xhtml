@@ -15,44 +15,35 @@
     <ui:composition template="templates/common.xhtml">
         <ui:define name="content">
             <h1>Add Movie</h1>
-            <p:panelGrid columns="2" cellpadding="5" style="width: 80%">
-                <h:form >
-                    <table class="tg">
-                        <tr>
-                            <th>Cím:</th>
-                            <th><p:inputText value="#{moviesView.newMovie.cim}"/></th>
-                        </tr>
-                        <tr>
-                            <th>Datum</th>
-                            <th><p:inputMask type="datum" value="#{moviesView.newMovie.datum}" mask="9999.99.99">
-                                <f:convertDateTime pattern="yyyy.MM.dd"/>
-                            </p:inputMask></th>
-                        </tr>
-                        <tr>
-                            <th>Típus</th>
-                            <th><p:selectOneButton value="#{moviesView.newMovie.tipus}">
-                                <f:selectItem itemLabel="DVD" itemValue="DVD"/>
-                                <f:selectItem itemLabel="VHS" itemValue="VHS"/>
-                            </p:selectOneButton></th>
-                        </tr>
-                        <tr>
-                            <th>Status</th>
-                            <th><p:selectOneButton value="#{moviesView.newMovie.status}">
-                                <f:selectItem itemLabel="Available" itemValue="Available" />
-                                <f:selectItem itemLabel="Rented" itemValue="Rented" />
-                                <f:selectItem itemLabel="Selejtezett" itemValue="Selejtezett" />
-                            </p:selectOneButton></th>
-                        </tr>
-                        <tr>
-                            <th>Sorszam</th>
-                            <th><p:inputText value="#{moviesView.newMovie.sorszam}"/></th>
-                        </tr>
-                        <tr>
-                            <th> <p:commandButton value="Add" action="#{moviesView.addMovie}"/></th>
-                            <th>asd</th>
-                        </tr>
-                    </table>
-                </h:form>
+            <p:panelGrid columns="2" cellpadding="5"  style="width: 50%">
+
+                <h:outputText value="Cím"/>
+                <p:inputText value="#{moviesView.newMovie.cim}"/>
+
+                <h:outputText value="Dátum"/>
+                <p:inputMask type="datum" value="#{moviesView.newMovie.datum}" mask="9999.99.99">
+                    <f:convertDateTime pattern="yyyy.MM.dd"/>
+                </p:inputMask>
+
+                <h:outputText value="Típus"/>
+                <p:selectOneButton value="#{moviesView.newMovie.tipus}">
+                    <f:selectItem itemLabel="DVD" itemValue="DVD"/>
+                    <f:selectItem itemLabel="VHS" itemValue="VHS"/>
+                </p:selectOneButton>
+
+                <h:outputText value="Státus"/>
+                <p:selectOneButton value="#{moviesView.newMovie.status}">
+                    <f:selectItem itemLabel="Available" itemValue="Available" />
+                    <f:selectItem itemLabel="Rented" itemValue="Rented" />
+                    <f:selectItem itemLabel="Selejtezett" itemValue="Selejtezett" />
+                </p:selectOneButton>
+
+                <h:outputText value="Sorszám"/>
+                <p:inputText value="#{moviesView.newMovie.sorszam}"/>
+
+                <h:outputText/>
+                <p:commandButton value="Add" action="#{moviesView.addMovie}"/>
+
             </p:panelGrid>
         </ui:define>
 

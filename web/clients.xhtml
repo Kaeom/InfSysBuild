@@ -15,9 +15,9 @@
                 <p:dataTable var="clientsentity" value="#{clientView.clients}" widgetVar="clientsTable" style="width: 100%" rows="10"  paginator="true"
                              paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                              rowsPerPageTemplate="5,10,15">
-                    <p:column filterBy="#{clientsentity.id}" headerText="Id">
-                        <h:outputText value="#{clientsentity.id}"/>
-                    </p:column>
+                    <!--<p:column filterBy="#{clientsentity.id}" headerText="Id">-->
+                        <!--<h:outputText value="#{clientsentity.id}"/>-->
+                    <!--</p:column>-->
                     <p:column filterBy="#{clientsentity.nev}" headerText="Név">
                         <h:outputText value="#{clientsentity.nev}"/>
                     </p:column>

@@ -17,10 +17,10 @@
                 <p:dataTable var="moviesentity" value="#{moviesView.movies}" style="width: 100%" rows="10"  paginator="true"
                              paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
                              rowsPerPageTemplate="5,10,15">
-                    <p:column filterBy="#{moviesentity.id}" headerText="Id">
-                        <h:outputText value="#{moviesentity.id}" rendered="#{moviesentity.id != moviesView.editedMovie.id}"/>
-                        <p:inputText value="#{moviesView.editedMovie.id}" size="13" rendered="#{moviesentity.id == moviesView.editedMovie.id}"/>
-                    </p:column>
+                    <!--<p:column filterBy="#{moviesentity.id}" headerText="Id">-->
+                        <!--<h:outputText value="#{moviesentity.id}" rendered="#{moviesentity.id != moviesView.editedMovie.id}"/>-->
+                        <!--<p:inputText value="#{moviesView.editedMovie.id}" size="13" rendered="#{moviesentity.id == moviesView.editedMovie.id}"/>-->
+                    <!--</p:column>-->
 
                     <p:column filterBy="#{moviesentity.cim}" headerText="Cím">
                         <h:outputText value="#{moviesentity.cim}" rendered="#{moviesentity.id != moviesView.editedMovie.id}"/>
@@ -60,21 +60,11 @@
 
 
                     <p:column headerText="Törlés">
-                        <h:commandButton value="Törlés" rendered="#{moviesentity.status != 'Rented'}" action="#{moviesView.deleteMovie(moviesentity)}"/>
+                        <h:commandButton value="Törlés" rendered="#{moviesentity.status != 'Rented' and !moviesView.moviesIsEdited}" action="#{moviesView.deleteMovie(moviesentity)}"/>
                     </p:column>
                     <p:column headerText="Szerkesztés">
                         <h:commandButton id="editBtn" value="Szerkesztés" rendered="#{moviesentity.status != 'Rented' and !moviesView.moviesIsEdited}" action="#{moviesView.selectMovieToedit(moviesentity)}"/>
-                        <h:commandButton value="Mentés" rendered="#{moviesentity.status != 'Rented' and moviesView.moviesIsEdited}" action="#{moviesView.saveEditedMovie}"/>
-                        <!--<p:overlayPanel for="editBtn" hideEffect="fade" dynamic="true" style="width:600px">-->
-                                <!--<p:dataGrid columns="2">-->
-                                    <!--<p:inputText value="#{moviesView.editedMovie.id}"/>-->
-                                    <!--<p:inputText value="#{moviesView.editedMovie.cim}"/>-->
-                                    <!--<p:inputText value="#{moviesView.editedMovie.datum}"/>-->
-                                    <!--<p:inputText value="#{moviesView.editedMovie.sorszam}"/>-->
-                                    <!--<p:inputText value="#{moviesView.editedMovie.status}"/>-->
-                                    <!--<p:inputText value="#{moviesView.editedMovie.tipus}"/>-->
-                                <!--</p:dataGrid>-->
-                            <!--</p:overlayPanel>-->
+                        <h:commandButton value="Mentés" rendered="#{moviesentity.status != 'Rented' and moviesView.moviesIsEdited and moviesentity.id == moviesView.editedMovie.id}" action="#{moviesView.saveEditedMovie}"/>
                     </p:column>
                 </p:dataTable>
             </h:form>

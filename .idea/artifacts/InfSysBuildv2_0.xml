@@ -12,6 +12,9 @@
           <element id="library" level="project" name="Mojarra-2.4.0" />
           <element id="library" level="project" name="Hibernate 5.4.1-5.4.1" />
           <element id="library" level="project" name="mysql-connector-java-8.0.12" />
+          <element id="library" level="project" name="afterdark-1.0.10" />
+          <element id="library" level="project" name="cruze-1.0.10" />
+          <element id="library" level="project" name="cupertino-1.0.10" />
         </element>
       </element>
     </root>
