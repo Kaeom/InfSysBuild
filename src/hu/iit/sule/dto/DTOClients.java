@@ -28,6 +28,7 @@ public class DTOClients {
         Transaction transaction = null;
         try(Session session = HibernateUtil.getSessionFactory().openSession()){
             transaction = session.beginTransaction();
+            System.out.println(client.toString());
             session.save(client);
             transaction.commit();
         }catch (Exception e){

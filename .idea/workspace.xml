@@ -7,13 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d9cd479-912e-42c0-9670-cfa7b6d6dcfd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hu/iit/sule/view/ClientView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hu/iit/sule/view/ClientView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/hu/iit/sule/view/MoviesView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hu/iit/sule/view/MoviesView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/add_client.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/add_client.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infsysbuild.sql" beforeDir="false" afterPath="$PROJECT_DIR$/infsysbuild.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hu/iit/sule/dto/DTOClients.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/hu/iit/sule/dto/DTOClients.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/add_movie.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/add_movie.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/client_data.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/client_data.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/movies.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/web/movies.xhtml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -55,8 +53,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/view/ClientView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="36" column="38" lean-forward="true" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
+            <state>
+              <caret line="36" column="38" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -70,11 +68,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/add_movie.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="454">
-              <caret line="48" column="16" lean-forward="true" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
+            <state relative-caret-position="280">
+              <caret line="36" column="80" selection-start-line="36" selection-start-column="80" selection-end-line="36" selection-end-column="80" />
             </state>
           </provider>
         </entry>
@@ -82,17 +80,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/add_client.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
+            <state relative-caret-position="561">
               <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/dto/DTOClients.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="34" column="39" lean-forward="true" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
+            <state relative-caret-position="238">
+              <caret line="30" column="48" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/model/ClientsEntity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="479">
+              <caret line="107" column="23" selection-start-line="107" selection-start-column="23" selection-end-line="107" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -100,8 +107,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/movies.xhtml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="44" column="129" lean-forward="true" selection-start-line="44" selection-start-column="129" selection-end-line="44" selection-end-column="129" />
+            <state relative-caret-position="748">
+              <caret line="44" column="129" selection-start-line="44" selection-start-column="129" selection-end-line="44" selection-end-column="129" />
             </state>
           </provider>
         </entry>
@@ -109,8 +116,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/view/MoviesView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="50" column="44" lean-forward="true" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
+            <state relative-caret-position="731">
+              <caret line="50" column="44" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -166,7 +173,6 @@
         <option value="$PROJECT_DIR$/src/hu/iit/sule/service/ClientServices.java" />
         <option value="$PROJECT_DIR$/src/hu/iit/sule/model/ClientsEntity.java" />
         <option value="$PROJECT_DIR$/src/hu/iit/sule/service/MoviesServices.java" />
-        <option value="$PROJECT_DIR$/src/hu/iit/sule/dto/DTOClients.java" />
         <option value="$PROJECT_DIR$/src/hu/iit/sule/dto/DTOMovies.java" />
         <option value="$PROJECT_DIR$/web/templates/header.xhtml" />
         <option value="$PROJECT_DIR$/web/index.xhtml" />
@@ -175,10 +181,12 @@
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/web/client_data.xhtml" />
         <option value="$PROJECT_DIR$/web/movies.xhtml" />
-        <option value="$PROJECT_DIR$/web/add_movie.xhtml" />
         <option value="$PROJECT_DIR$/web/add_client.xhtml" />
         <option value="$PROJECT_DIR$/src/hu/iit/sule/view/MoviesView.java" />
         <option value="$PROJECT_DIR$/src/hu/iit/sule/view/ClientView.java" />
+        <option value="$PROJECT_DIR$/src/hu/iit/sule/dto/DTOClients.java" />
+        <option value="$PROJECT_DIR$/infsysbuild.sql" />
+        <option value="$PROJECT_DIR$/web/add_movie.xhtml" />
       </list>
     </option>
   </component>
@@ -188,7 +196,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="706" />
     <option name="y" value="-9" />
     <option name="width" value="1649" />
@@ -414,11 +422,12 @@
       <workItem from="1554718698020" duration="1173000" />
       <workItem from="1554730080970" duration="10456000" />
       <workItem from="1554805101968" duration="550000" />
+      <workItem from="1554806941972" duration="1560000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67021000" />
+    <option name="totallyTimeSpent" value="68581000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -430,9 +439,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14552239" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14712153" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -443,7 +453,7 @@
       <window_info id="Persistence" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.42903575" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3336945" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -513,8 +523,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/faces-config.xml">
-      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider" />
       <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="com.intellij.jsf.yfilesGraph.editor.FacesNavigationFileEditorProvider" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/Product.java" />
     <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/service/RentingServices.java" />
@@ -538,9 +548,6 @@
           <caret line="19" column="35" selection-start-line="17" selection-start-column="24" selection-end-line="19" selection-end-column="35" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/infsysbuild.sql">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hibernate.cfg.xml">
       <provider selected="true" editor-type-id="text-editor">
@@ -574,13 +581,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
           <caret line="36" column="13" lean-forward="true" selection-end-line="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/model/ClientsEntity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="114" column="40" lean-forward="true" selection-end-line="122" />
         </state>
       </provider>
     </entry>
@@ -633,6 +633,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/view/ClientView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="36" column="38" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -640,45 +647,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/add_movie.xhtml">
+    <entry file="file://$PROJECT_DIR$/web/add_client.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="48" column="16" lean-forward="true" selection-start-line="48" selection-start-column="16" selection-end-line="48" selection-end-column="16" />
+        <state relative-caret-position="561">
+          <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web/movies.xhtml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="44" column="129" lean-forward="true" selection-start-line="44" selection-start-column="129" selection-end-line="44" selection-end-column="129" />
+        <state relative-caret-position="748">
+          <caret line="44" column="129" selection-start-line="44" selection-start-column="129" selection-end-line="44" selection-end-column="129" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/view/MoviesView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="50" column="44" lean-forward="true" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/view/ClientView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="36" column="38" lean-forward="true" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/add_client.xhtml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
+        <state relative-caret-position="731">
+          <caret line="50" column="44" selection-start-line="50" selection-start-column="44" selection-end-line="50" selection-end-column="44" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/dto/DTOClients.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="34" column="39" lean-forward="true" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="39" />
+        <state relative-caret-position="238">
+          <caret line="30" column="48" selection-start-line="30" selection-start-column="48" selection-end-line="30" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/infsysbuild.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="43" column="77" selection-start-line="43" selection-start-column="77" selection-end-line="43" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/hu/iit/sule/model/ClientsEntity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="107" column="23" selection-start-line="107" selection-start-column="23" selection-end-line="107" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/add_movie.xhtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="36" column="80" selection-start-line="36" selection-start-column="80" selection-end-line="36" selection-end-column="80" />
         </state>
       </provider>
     </entry>

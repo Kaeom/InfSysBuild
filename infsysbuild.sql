@@ -34,22 +34,21 @@ CREATE TABLE `clients` (
   `Szig_szam` varchar(512) COLLATE utf8_hungarian_ci NOT NULL,
   `Lakcim` varchar(512) COLLATE utf8_hungarian_ci NOT NULL,
   `Id` int(11) NOT NULL,
-  `Aktiv` tinyint(1) NOT NULL,
-  `isEdit` bit(1) NOT NULL
+  `Aktiv` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
 
 --
 -- A tábla adatainak kiíratása `clients`
 --
 
-INSERT INTO `clients` (`Nev`, `Telefon`, `Szig_szam`, `Lakcim`, `Id`, `Aktiv`, `isEdit`) VALUES
-('Timár Gyala', '06-96-478-37-16', '123598AD', '9343 Vica Wesselényi u. 51.', 1, 1, b'0'),
-('Sebestyén Firenze', '06-01-109-45-00', '564787FG', '1118 Budapest Csabai kapu 18.', 2, 1, b'0'),
-('Baán Pázmán', '06-20-465-45-63', '345786LA', '3813 Kupa Baross tér 66.', 3, 1, b'0'),
-('Asztalos Lehel', '06-70-719-03-70', '234785UI', '8960 Bárszentmihályfa Nyár utca 59.', 4, 1, b'0'),
-('Makay Vázsony', '06-69-414-56-46', '546784HU', '7661 Erzsébet Kossuth Lajos u. 96.', 5, 1, b'0'),
-('Lengyel Alexandra', '06-36-123-45-13', '234624KH', '3516 Miskolc Dózsa György út 14.', 6, 1, b'0'),
-('Illyés Petra', '06-70-456-73-45', '235462JH', '7981 Kistamási Teréz krt. 37.', 7, 1, b'0');
+INSERT INTO `clients` (`Nev`, `Telefon`, `Szig_szam`, `Lakcim`, `Id`, `Aktiv`) VALUES
+('Timár Gyala', '06-96-478-37-16', '123598AD', '9343 Vica Wesselényi u. 51.', 1, 1),
+('Sebestyén Firenze', '06-01-109-45-00', '564787FG', '1118 Budapest Csabai kapu 18.', 2, 1),
+('Baán Pázmán', '06-20-465-45-63', '345786LA', '3813 Kupa Baross tér 66.', 3, 1),
+('Asztalos Lehel', '06-70-719-03-70', '234785UI', '8960 Bárszentmihályfa Nyár utca 59.', 4, 1),
+('Makay Vázsony', '06-69-414-56-46', '546784HU', '7661 Erzsébet Kossuth Lajos u. 96.', 5, 1),
+('Lengyel Alexandra', '06-36-123-45-13', '234624KH', '3516 Miskolc Dózsa György út 14.', 6, 1),
+('Illyés Petra', '06-70-456-73-45', '235462JH', '7981 Kistamási Teréz krt. 37.', 7, 1);
 
 -- --------------------------------------------------------
 
