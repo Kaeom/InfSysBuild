@@ -60,11 +60,11 @@
 
 
                     <p:column headerText="Törlés">
-                        <h:commandButton value="Törlés" rendered="#{moviesentity.status != 'Rented' and !moviesView.moviesIsEdited}" action="#{moviesView.deleteMovie(moviesentity)}"/>
+                        <p:commandButton value="Törlés" rendered="#{moviesentity.status != 'Rented' and !moviesView.moviesIsEdited}" action="#{moviesView.deleteMovie(moviesentity)}"/>
                     </p:column>
                     <p:column headerText="Szerkesztés">
-                        <h:commandButton id="editBtn" value="Szerkesztés" rendered="#{moviesentity.status != 'Rented' and !moviesView.moviesIsEdited}" action="#{moviesView.selectMovieToedit(moviesentity)}"/>
-                        <h:commandButton value="Mentés" rendered="#{moviesentity.status != 'Rented' and moviesView.moviesIsEdited and moviesentity.id == moviesView.editedMovie.id}" action="#{moviesView.saveEditedMovie}"/>
+                        <p:commandButton id="editBtn" value="Szerkesztés" rendered="#{moviesentity.status != 'Rented' and !moviesView.moviesIsEdited}" action="#{moviesView.selectMovieToedit(moviesentity)}"/>
+                        <p:commandButton value="Mentés" rendered="#{moviesentity.status != 'Rented' and moviesView.moviesIsEdited and moviesentity.id == moviesView.editedMovie.id}" action="#{moviesView.saveEditedMovie}"/>
                     </p:column>
                 </p:dataTable>
             </h:form>

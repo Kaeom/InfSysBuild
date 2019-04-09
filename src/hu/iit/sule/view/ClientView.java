@@ -36,7 +36,7 @@ public class ClientView implements Serializable {
     public String addClient(){
         services.addClient(newClient);
         newClient = new ClientsEntity();
-        return "clients";
+        return "clients?faces-redirect=true\"";
     }
 
     public String deleteClient(ClientsEntity client){

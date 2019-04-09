@@ -14,6 +14,7 @@
     <ui:composition template="templates/common.xhtml">
         <ui:define name="content">
             <h1>Add Client</h1>
+            <h:form>
             <p:panelGrid columns="2" style="width: 50%" cellpadding="5" >
                 <h:outputText value="Név:"/>
                 <p:inputText value="#{clientView.newClient.nev}"/>
@@ -30,6 +31,7 @@
                 <h:outputText/>
                 <p:commandButton value="Add" action="#{clientView.addClient}"/>
             </p:panelGrid>
+            </h:form>
         </ui:define>
 
     </ui:composition>

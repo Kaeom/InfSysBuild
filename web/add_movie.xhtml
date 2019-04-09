@@ -15,6 +15,7 @@
     <ui:composition template="templates/common.xhtml">
         <ui:define name="content">
             <h1>Add Movie</h1>
+            <h:form>
             <p:panelGrid columns="2" cellpadding="5"  style="width: 50%">
 
                 <h:outputText value="Cím"/>
@@ -45,6 +46,7 @@
                 <p:commandButton value="Add" action="#{moviesView.addMovie}"/>
 
             </p:panelGrid>
+            </h:form>
         </ui:define>
 
     </ui:composition>

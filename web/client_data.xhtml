@@ -38,9 +38,9 @@
                                 <f:selectItem itemLabel="Nem aktív" itemValue="false"/>
                         </p:selectOneButton>
                 </p:panelGrid>
-                <h:commandButton value="Edit" action="#{clientView.changeEdit}" rendered="#{!clientView.edit}"/>
-                <h:commandButton value="Save" action="#{clientView.saveClient}" rendered="#{clientView.edit}"/>
-                <h:commandButton value="Back" action="clients.xhtml" />
+                <p:commandButton value="Edit" action="#{clientView.changeEdit}" rendered="#{!clientView.edit}"/>
+                <p:commandButton value="Save" action="#{clientView.saveClient}" rendered="#{clientView.edit}"/>
+                <p:commandButton value="Back" action="clients.xhtml" />
         </h:form>
 
         <h2>Kölcsönözhető filmek:</h2>
@@ -69,7 +69,7 @@
                                 <h:outputText value="#{moviesentity.tipus}" />
                         </p:column>
                         <p:column headerText="Kölcsonzés">
-                                <h:commandButton value="Kölcsönzés" action="#{clientView.saveRenting(moviesentity)}" rendered="#{moviesentity.status != 'Rented'}"/>
+                                <p:commandButton value="Kölcsönzés" action="#{clientView.saveRenting(moviesentity)}" rendered="#{moviesentity.status != 'Rented'}"/>
                         </p:column>
                 </p:dataTable>
         </h:form>

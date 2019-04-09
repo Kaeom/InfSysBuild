@@ -30,7 +30,7 @@ public class MoviesView implements Serializable {
     public String addMovie(){
         service.addMovie(newMovie);
         newMovie = new MoviesEntity();
-        return "movies";
+        return "movies?faces-redirect=true";
     }
 
     public String deleteMovie(MoviesEntity movie){
@@ -48,7 +48,7 @@ public class MoviesView implements Serializable {
         service.editMovie(editedMovie);
         editedMovie = new MoviesEntity();
         moviesIsEdited = false;
-        return null;
+        return "movies?faces-redirect=true";
     }
 
     public void setService(MoviesServices service){
